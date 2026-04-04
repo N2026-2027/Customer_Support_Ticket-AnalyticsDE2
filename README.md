@@ -274,7 +274,7 @@ Recursos creados: Compute Engine VM (e2-standard-4) · GCS Bucket · Firewall (p
 
 ```
 # 1. Git clone repo or open codespace
-git clone https://github.com/tu-usuario/capstone-support-analytics
+git clone https://github.com/N2026-2025/Customer_Support_Ticket-AnalyticsDE2.git
 cd capstone-support-analytics
 make setup
 
