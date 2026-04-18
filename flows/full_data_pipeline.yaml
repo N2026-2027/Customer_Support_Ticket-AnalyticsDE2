@@ -1,0 +1,28 @@
+id: full_data_pipeline
+namespace: dev
+
+tasks:
+  - id: 01_spark_batch_ingestion
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /batch/bin/spark-submit --packages org.postgresql:postgresql:42.5.0,org.duckdb:duckdb_jdbc:0.10.3 /app/scripts/spark_etl.py
+
+  - id: 02_dbt_quality_tests
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - cd /app/dbt/capstone_support && dbt test --profiles-dir ..
+
+  - id: 03_dbt_transformation
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - cd /app/dbt/capstone_support && dbt run --profiles-dir ..
+
+errors:
+  - id: alert_on_failure
+    type: io.kestra.plugin.core.debug.Echo
+    format: "❌ El pipeline falló en la etapa de Ingeniería. Revisar logs."
+
+triggers:
+  - id: daily_schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "0 0 * * *" # Se corre solo todas las noches a las 12

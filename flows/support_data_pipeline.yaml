@@ -1,0 +1,12 @@
+id: support_data_pipeline
+namespace: dev
+tasks:
+  - id: spark_etl
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - /batch/bin/spark-submit --packages org.postgresql:postgresql:42.5.0,org.duckdb:duckdb_jdbc:0.10.3 /app/scripts/spark_etl.py
+
+  - id: dbt_transform
+    type: io.kestra.plugin.scripts.shell.Commands
+    commands:
+      - cd /app/dbt/capstone_support && dbt run --profiles-dir ..

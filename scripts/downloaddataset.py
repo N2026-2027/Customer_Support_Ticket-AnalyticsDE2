@@ -18,9 +18,9 @@ import zipfile
 import shutil
 from pathlib import Path
 
-DATASET   = "mirzayasirabdullah07/customer-support-tickets-dataset-200k-records"
+DATASET   = "suraj520/customer-support-ticket-dataset"
 OUT_DIR   = Path("./data")
-FILENAME  = "customer_support_tickets_200k.csv"
+FILENAME  = "customer_support_tickets.csv"
 
 def setup_kaggle_credentials():
     """Configura credenciales desde variables de entorno si no existe kaggle.json"""

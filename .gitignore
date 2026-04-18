@@ -2,3 +2,11 @@
 .sixth/
 .qodo/
 .github/
+batch/*
+./batch/jdk-11.0.2
+./batch/spark-3.3.2-bin-hadoop3
+duckdb/*.duckdb
+storage/
+!batch/notebooks/
+dbt/capstone_support/seeds/customer_support_tickets_200k.csv
+data/
