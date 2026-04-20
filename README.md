@@ -204,6 +204,43 @@ Customer_Support_Ticket-AnalyticsDE2/
 - Spark 3.3.2 en `./batch/spark-3.3.2-bin-hadoop3`
 - Credenciales Kaggle (ver abajo)
 
+## ⚙️ Paso 0 — Setup de Spark y Java (solo entorno local)
+
+> ⚠️ Este paso es **solo necesario si ejecutás Spark fuera de Docker**.
+> Si usás `docker-compose`, podés saltearlo.
+
+### 1. Descargar dependencias
+
+```bash
+wget https://archive.apache.org/dist/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz
+tar -xzvf spark-3.3.2-bin-hadoop3.tgz
+
+wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
+tar -xzvf openjdk-11.0.2_linux-x64_bin.tar.gz
+```
+
+### 2. Configurar variables de entorno
+
+```bash
+export JAVA_HOME=$(pwd)/jdk-11.0.2
+export PATH=$JAVA_HOME/bin:$PATH
+
+export SPARK_HOME=$(pwd)/spark-3.3.2-bin-hadoop3
+export PATH=$PATH:$SPARK_HOME/bin
+```
+
+### 3. Verificación
+
+```bash
+java -version
+spark-submit --version
+```
+
+Deberías ver:
+
+* Java → `11.0.2`
+* Spark → `3.3.2`
+
 ### Paso 1 — Credenciales Kaggle
 
 ```bash

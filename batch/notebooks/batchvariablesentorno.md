@@ -1,4 +1,3 @@
-misma carpeta):
 
 bash
 
