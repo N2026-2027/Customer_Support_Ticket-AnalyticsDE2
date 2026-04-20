@@ -1,8 +1,8 @@
 # 📊 Customer Support Analytics — DE Capstone
 
-> **Stack:** Apache Spark · DuckDB · dbt · Kestra · PostgreSQL · Streamlit  
+> **Stack:** Apache Spark · DuckDB · dbt · Kestra · PostgreSQL · Streamlit ·
 > **Dataset:** [Customer Support Tickets 200k — Kaggle](https://www.kaggle.com/datasets/mirzayasirabdullah07/customer-support-tickets-dataset-200k-records)
-
+> **Dataset:** [Customer Support Ticket Dataset](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset) — 8,469 tickets · 17 columnas
 ---
 ## 📋 Problem Description
  
