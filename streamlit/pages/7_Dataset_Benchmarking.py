@@ -14,7 +14,7 @@ st.markdown("Comparación técnica entre el Dataset 200k (Sintético) y el Datas
 
 @st.cache_data(ttl=300)
 def load_data():
-    return get_data("SELECT * FROM main_marts.fct_global_tickets")
+    return get_data("SELECT * FROM support_200k.fct_global_tickets")
 
 df = load_data()
 

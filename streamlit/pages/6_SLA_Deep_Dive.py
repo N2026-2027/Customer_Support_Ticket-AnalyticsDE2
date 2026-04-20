@@ -28,7 +28,7 @@ def load_data():
             AVG(resolution_time_hours)      AS avg_time,
             AVG(first_response_time_hours)  AS avg_first_response,
             COUNT(*)                        AS total_tickets
-        FROM main_marts.fct_global_tickets
+        FROM fct_global_tickets
         GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
     """)
 

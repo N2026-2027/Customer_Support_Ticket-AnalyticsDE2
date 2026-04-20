@@ -9,7 +9,7 @@ def render_sidebar():
 
         # Estado DuckDB 200k
         try:
-            df = get_data("SELECT COUNT(*) AS n FROM main_marts.fct_global_tickets")
+            df = get_data("SELECT COUNT(*) AS n FROM support_200k.fct_global_tickets")
             n = int(df['n'].iloc[0]) if not df.empty else 0
             st.success(f"DuckDB 200k: ✅ {n:,} tickets")
         except Exception as e:
