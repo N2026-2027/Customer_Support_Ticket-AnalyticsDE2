@@ -1,0 +1,25 @@
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticket_id
+from "support_200k"."main"."customer_support_tickets_200k"
+where ticket_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test

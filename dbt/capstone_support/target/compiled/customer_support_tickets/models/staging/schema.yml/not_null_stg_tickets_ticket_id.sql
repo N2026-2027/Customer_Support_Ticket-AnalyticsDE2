@@ -5,7 +5,7 @@
 
 
 select ticket_id
-from "support"."main_staging"."stg_tickets"
+from "support_200k"."main"."stg_tickets"
 where ticket_id is null
 
 

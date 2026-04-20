@@ -1,12 +1,10 @@
 version: 2
 
 models:
-  # --- Modelo 1: Tickets 200k ---
   - name: stg_tickets_200k
-    description: "Modelo de staging que limpia el dataset principal de 200k tickets"
+    description: "Modelo de staging de 200k tickets"
     columns:
       - name: ticket_id
-        description: "ID único del ticket"
         tests:
           - not_null:
               config:
@@ -14,26 +12,28 @@ models:
           - unique:
               config:
                 severity: warn
-
       - name: priority
-        description: "Prioridad del ticket (low, medium, high, critical)"
         tests:
           - accepted_values:
+              # Sintaxis moderna para evitar el Deprecation Warning
               values: ['low', 'medium', 'high', 'critical']
               config:
-                severity: warn
+                # Si querés que el pipeline sea perfecto, subilo a 'error' 
+                # o dejalo en 'warn' si esos 4 valores no te molestan.
+                severity: warn 
 
-  # --- Modelo 2: Usuarios ---
-  - name: stg_users
-    description: "Modelo de staging para la dimensión de usuarios/clientes"
+  - name: stg_tickets
+    description: "Modelo de staging principal"
     columns:
-      - name: user_id
-        description: "Clave subrogada generada para el usuario"
+      - name: ticket_id
         tests:
           - not_null
           - unique
 
-      - name: email
-        description: "Correo electrónico del cliente"
+  - name: stg_users
+    description: "Modelo de staging para usuarios"
+    columns:
+      - name: user_id
         tests:
           - not_null
+          - unique

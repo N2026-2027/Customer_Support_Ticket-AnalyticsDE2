@@ -6,17 +6,16 @@
 -- ============================================================
 
 with base as (
-    select * from "support_200k"."main_staging"."stg_tickets"
+    select * from "support_200k"."main"."stg_tickets"
 ),
 
 product_stats as (
     select
-        product_purchased,
-        ticket_subject,
-        category                                                   as ticket_type,
-        priority                                                   as ticket_priority,
-        status                                                     as ticket_status,
-        ticket_channel,
+        product, -- Corregido: product_purchased -> product
+        category as ticket_type, -- Mapeo a columna real
+        priority as ticket_priority, -- Mapeo a columna real
+        status as ticket_status, -- Mapeo a columna real
+        channel as ticket_channel, -- Mapeo a columna real
 
         count(*)                                                   as total_tickets,
         avg(customer_satisfaction_score)                           as avg_satisfaction,
@@ -26,14 +25,6 @@ product_stats as (
             100.0 * sum(case when status = 'closed' then 1 else 0 end)
             / count(*)
         , 1)                                                       as pct_resolved,
-
-        -- Tickets que nunca tuvieron respuesta
-        sum(case when is_open_no_response then 1 else 0 end)       as no_response_count,
-
-        round(
-            100.0 * sum(case when is_open_no_response then 1 else 0 end)
-            / count(*)
-        , 1)                                                       as pct_no_response,
 
         -- Tickets críticos
         sum(case when priority = 'critical' then 1 else 0 end) as critical_count,
@@ -49,9 +40,9 @@ product_stats as (
                  and status != 'closed' then 1 else 0
             end)                                                   as critical_unresolved,
 
-        -- Hora promedio de respuesta (usando las columnas de tiempo de staging)
-        avg(first_response_time_hours)                            as avg_response_hour,
-        avg(resolution_time_hours)                                as avg_resolution_hour,
+        -- Tiempos promedio
+        avg(first_response_time_hours)                             as avg_first_response_hrs,
+        avg(resolution_time_hours)                                 as avg_resolution_hrs,
 
         -- Health score: 0 (peor) a 100 (mejor)
         round(
@@ -62,13 +53,13 @@ product_stats as (
         , 1)                                                       as health_score
 
     from base
-    group by 1,2,3,4,5,6
+    group by 1,2,3,4,5
 ),
 
 -- Clasificación de riesgo por producto (agrupado)
 product_risk as (
     select
-        product_purchased,
+        product,
         avg(pct_resolved)     as avg_pct_resolved,
         avg(avg_satisfaction) as avg_satisfaction,
         sum(critical_unresolved) as total_critical_unresolved,
@@ -90,5 +81,5 @@ select
     pr.avg_health_score       as product_avg_health,
     pr.risk_level
 from product_stats ps
-left join product_risk pr using (product_purchased)
+left join product_risk pr using (product)
 order by critical_unresolved desc, total_tickets desc

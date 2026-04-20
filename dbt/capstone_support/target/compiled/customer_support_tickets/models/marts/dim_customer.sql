@@ -21,7 +21,7 @@ WITH ranked AS (
             PARTITION BY customer_email
             ORDER BY customer_tenure_months DESC NULLS LAST
         ) AS rn
-    FROM "support_200k"."main_staging"."stg_tickets_200k"
+    FROM "support_200k"."main"."stg_tickets_200k"
 )
 
 SELECT

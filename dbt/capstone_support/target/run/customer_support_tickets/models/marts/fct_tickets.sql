@@ -10,15 +10,23 @@
       
 
 -- ============================================================
--- fact_tickets — Tabla de hechos central (Solo dataset 200k)
+-- fct_tickets — Tabla de hechos central del Star Schema
+-- Granularidad: 1 fila = 1 ticket
+--
+-- SIMPLIFICADO: solo lee del dataset 200k (el principal).
+-- SIN UNION ALL → elimina el error VARCHAR != INTEGER [58.0]
+-- que ocurría al intentar combinar schemas distintos.
+--
+-- El dataset original (18k) queda disponible en stg_tickets
+-- para consultas directas desde los marts o Streamlit.
 -- ============================================================
 
-WITH base AS (
-    SELECT
+with base as (
+    select
         cast(ticket_id                   as varchar)  as ticket_id,
         cast(customer_email              as varchar)  as customer_email,
         cast(product                     as varchar)  as product,
-        cast(ticket_channel              as varchar)  as channel,
+        cast(channel                     as varchar)  as channel,
         cast(category                    as varchar)  as category,
         cast(priority                    as varchar)  as priority,
         cast(status                      as varchar)  as status,
@@ -31,27 +39,27 @@ WITH base AS (
         cast(escalated                   as boolean)  as escalated,
         cast(sla_breached                as boolean)  as sla_breached,
         cast(previous_tickets            as integer)  as previous_tickets,
-        cast('200k'                      as varchar)  as dataset_source
-    FROM "support_200k"."main_staging"."stg_tickets_200k"
+        cast(dataset_source              as varchar)  as dataset_source
+    from "support_200k"."main_staging"."stg_tickets_200k"
 ),
 
-enriched AS (
-    SELECT
+enriched as (
+    select
         b.*,
         c.customer_sk,
         p.product_sk,
         tt.ticket_type_sk,
-        b.ticket_created_date AS date_id
-    FROM base b
-    LEFT JOIN "support_200k"."main_marts"."dim_customer"    c  ON b.customer_email = c.customer_email
-    LEFT JOIN "support_200k"."main_marts"."dim_product"     p  ON b.product        = p.product
-                                             AND COALESCE(b.channel, 'unknown') = p.channel
-    LEFT JOIN "support_200k"."main_marts"."dim_ticket_type" tt ON b.category       = tt.category
-                                             AND b.priority        = tt.priority
+        b.ticket_created_date as date_id
+    from base b
+    left join "support_200k"."main_marts"."dim_customer"    c  on b.customer_email = c.customer_email
+    left join "support_200k"."main_marts"."dim_product"     p  on b.product        = p.product
+                                             and coalesce(b.channel, 'unknown') = p.channel
+    left join "support_200k"."main_marts"."dim_ticket_type" tt on b.category       = tt.category
+                                             and b.priority        = tt.priority
 )
 
-SELECT
-    md5(cast(coalesce(cast(ticket_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dataset_source as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) AS ticket_sk,
+select
+    md5(cast(coalesce(cast(ticket_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(dataset_source as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as ticket_sk,
 
     -- FKs a dimensiones
     ticket_id,
@@ -78,25 +86,25 @@ SELECT
     sla_breached,
 
     -- Calculados
-    CASE
-        WHEN sla_breached = FALSE THEN 'SLA_Cumplido'
-        WHEN sla_breached = TRUE  THEN 'SLA_Incumplido'
-        ELSE 'SLA_Cumplido'
-    END AS sla_status,
+    case
+        when sla_breached = false then 'SLA_Cumplido'
+        when sla_breached = true  then 'SLA_Incumplido'
+        else 'SLA_Cumplido'
+    end as sla_status,
 
-    CASE
-        WHEN status IN ('closed', 'resolved') THEN TRUE
-        ELSE FALSE
-    END AS is_resolved,
+    case
+        when status in ('closed', 'resolved') then true
+        else false
+    end as is_resolved,
 
-    CASE
-        WHEN customer_satisfaction_score >= 4 THEN 'satisfied'
-        WHEN customer_satisfaction_score >= 3 THEN 'neutral'
-        WHEN customer_satisfaction_score IS NOT NULL THEN 'unsatisfied'
-        ELSE 'unknown'
-    END AS satisfaction_band
+    case
+        when customer_satisfaction_score >= 4 then 'satisfied'
+        when customer_satisfaction_score >= 3 then 'neutral'
+        when customer_satisfaction_score is not null then 'unsatisfied'
+        else 'unknown'
+    end as satisfaction_band
 
-FROM enriched
+from enriched
     );
   
   

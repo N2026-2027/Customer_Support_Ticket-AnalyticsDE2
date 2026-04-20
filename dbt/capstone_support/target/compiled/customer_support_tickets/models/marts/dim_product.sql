@@ -5,7 +5,7 @@ WITH base AS (
         product,
         -- Usamos el nombre real que viene del staging: ticket_channel
         COALESCE(ticket_channel, 'unknown') as channel_name
-    FROM "support_200k"."main_staging"."stg_tickets_200k"
+    FROM "support_200k"."main"."stg_tickets_200k"
 )
 
 SELECT

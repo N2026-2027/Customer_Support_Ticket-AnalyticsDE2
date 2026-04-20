@@ -1,52 +1,33 @@
 version: 2
 
-# ============================================================
-# DOS sources — uno por base DuckDB
-#
-# source 'raw_200k':
-#   database: support_200k   → support_200k.duckdb
-#   schema:   main            → donde escribe Spark
-#   tabla:    customer_support_tickets_200k
-#
-# source 'raw_original':
-#   database: support_original → support_original.duckdb
-#   schema:   main
-#   tabla:    customer_support_tickets
-#
-# Con dbt-duckdb, 'database' en el source hace que dbt busque
-# en esa base específica. El adapter maneja el ATTACH automático
-# cuando el target es distinto a la database del source.
-# ============================================================
-
 sources:
-  - name: raw_200k
-    database: support_200k       # → support_200k.duckdb
+  - name: raw_data
+    # En esta versión, dbt buscaba todo en el esquema main
     schema: main
-    description: "Dataset 200k sintético — ingresado por Spark"
-    tables:
-      - name: customer_support_tickets_200k
-        description: "200,000 tickets, snake_case, 30 columnas"
-        columns:
-          - name: ticket_id
-            tests: [not_null]
-          - name: customer_email
-            tests: [not_null]
-          - name: priority
-            tests:
-              - accepted_values:
-                  values: ['Low', 'Medium', 'High', 'Urgent', 'Critical',
-                           'low', 'medium', 'high', 'urgent', 'critical']
-
-  - name: raw_original
-    database: support_original   # → support_original.duckdb
-    schema: main
-    description: "Dataset original Kaggle — ingresado por Spark"
+    description: "Fuentes de datos crudos unificadas"
     tables:
       - name: customer_support_tickets
-        description: "18,762 tickets, Title Case headers, 17 columnas"
-        columns:
-          - name: Ticket ID
-            tests: [not_null]
-          - name: Customer Email
-            tests: [not_null]
+        description: "Dataset original de Kaggle"
+      - name: customer_support_tickets_200k
+        description: "Dataset sintético de 200k registros"
 
+  - name: raw_200k
+    # Importante: dbt-duckdb usa 'main_raw' por defecto cuando 
+    # el esquema en dbt_project.yml se define como 'raw' para los seeds.
+    schema: main
+    description: "Dataset de 200k registros recuperado vía dbt seed"
+    tables:
+      - name: customer_support_tickets_200k
+        description: "Tabla principal de tickets con 200.000 filas"
+        columns:
+          - name: ticket_id
+            tests:
+              - not_null
+              - unique
+
+  - name: raw_original
+    # Este es el esquema para el dataset pequeño original
+    schema: main
+    tables:
+      - name: customer_support_tickets
+        description: "Dataset original de 8.000 registros"

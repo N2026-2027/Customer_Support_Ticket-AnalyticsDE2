@@ -1,68 +1,61 @@
 
 
--- Dashboard 1 & 2: Operations Overview + Channel Performance
+-- Dashboard 3: Priority Matrix + CX
+-- Responde:
+--   - Correlación edad-satisfacción
+--   - Canal con mayor satisfacción
+--   - Producto con más quejas críticas
+--   - Diferencia de satisfacción por género
+--   - Tickets con mayor resolution_time_hours → peor rating
 
 with base as (
-    select * from "support_200k"."main_staging"."stg_tickets"
+    select * from "support_200k"."main"."stg_tickets"
 ),
 
-per_channel as (
+enriched as (
     select
-        ticket_channel,
-        priority                            as ticket_priority,
-        status                              as ticket_status,
-        category                            as ticket_type,
+        *,
+        case
+            when customer_age < 25               then 'Gen Z (<25)'
+            when customer_age between 25 and 34  then 'Millennial (25-34)'
+            when customer_age between 35 and 44  then 'Gen X (35-44)'
+            when customer_age between 45 and 59  then 'Boomer (45-59)'
+            else                                      'Senior (60+)'
+        end as age_segment,
 
-        -- Ajuste de nombres de columnas de fecha
-        extract('dow'   from ticket_created_date) as day_of_week,
-        strftime(ticket_created_date, '%A')       as day_name,
-        extract('month' from ticket_created_date) as month_num,
-        strftime(ticket_created_date, '%B')       as month_name,
-        extract('year'  from ticket_created_date) as year,
-
-        -- Ajuste de nombres de columnas métricas
-        first_response_time_hours           as first_response_hrs,
-        resolution_time_hours               as resolution_hrs,
-        customer_satisfaction_score         as satisfaction_rating,
-
-        -- SLA flags
-        case when resolution_time_hours <= 24 then 1 else 0 end    as resolved_under_24h,
-        case when status in ('open','pending customer response')
-             then 1 else 0 end                                     as is_backlog,
-        case when priority = 'critical'
-              and status != 'closed' then 1 else 0 end             as is_critical_unresolved
+        -- Bucket de resolución (Corregido: resolution_time_hours)
+        case
+            when resolution_time_hours < 6   then '0-6h'
+            when resolution_time_hours < 24  then '6-24h'
+            when resolution_time_hours < 72  then '1-3 days'
+            else                                  '3+ days'
+        end as resolution_bucket
 
     from base
 )
 
 select
-    ticket_channel,
-    ticket_priority,
-    ticket_status,
-    ticket_type,
-    day_of_week,
-    day_name,
-    month_num,
-    month_name,
-    year,
+    channel as ticket_channel,
+    priority as ticket_priority,
+    category as ticket_type,
+    status as ticket_status,
+    product as product_purchased,
+    customer_gender,
+    age_segment,
+    resolution_bucket,
 
-    count(*)                                  as total_tickets,
-    avg(first_response_hrs)                   as avg_first_response_hrs,
-    avg(resolution_hrs)                       as avg_resolution_hrs,
-    avg(satisfaction_rating)                  as avg_satisfaction,
+    count(*)                           as total_tickets,
+    avg(customer_satisfaction_score)   as avg_satisfaction,
+    avg(resolution_time_hours)         as avg_resolution_hrs,
+    avg(first_response_time_hours)     as avg_first_response_hrs,
 
-    sum(resolved_under_24h)                   as tickets_resolved_under_24h,
-    round(
-        100.0 * sum(resolved_under_24h) / nullif(count(*), 0), 1
-    )                                         as pct_resolved_under_24h,
-
-    sum(is_backlog)                           as backlog_count,
-    sum(is_critical_unresolved)               as critical_unresolved_count,
+    -- Para Priority Matrix heatmap
+    sum(case when priority = 'critical' then 1 else 0 end) as critical_count,
+    sum(case when status   = 'closed'   then 1 else 0 end) as closed_count,
 
     round(
-        100.0 * sum(is_critical_unresolved)
-            / nullif(sum(case when ticket_priority='critical' then 1 else 0 end), 0)
-    , 1)                                      as pct_critical_unresolved
+        100.0 * sum(case when status='closed' then 1 else 0 end) / count(*)
+    , 1) as pct_closed
 
-from per_channel
-group by 1,2,3,4,5,6,7,8,9
+from enriched
+group by 1,2,3,4,5,6,7,8

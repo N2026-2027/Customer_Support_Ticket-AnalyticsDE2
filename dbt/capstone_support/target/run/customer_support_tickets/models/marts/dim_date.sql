@@ -4,7 +4,7 @@
     
 
     create  table
-      "support_200k"."main_marts"."dim_date__dbt_tmp"
+      "support_200k"."main"."dim_date__dbt_tmp"
   
     as (
       

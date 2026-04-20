@@ -9,37 +9,34 @@ with base as (
     select * from {{ ref('stg_tickets') }}
 ),
 
--- Número de tickets por cliente
+-- Número de tickets por cliente (Agrupado por Email)
 customer_ticket_counts as (
     select
-        customer_id,
+        customer_email, -- Identificador único definitivo
         customer_name,
-        -- Si dbt dice que no existe en el FROM, asegúrate de haberla agregado al stg_tickets.sql
-        customer_gender, 
+        customer_gender,
         customer_age,
         count(*)                                                    as ticket_count,
-        count(distinct product_purchased)                           as products_with_issues,
+        count(distinct product)                                     as products_with_issues,
         count(distinct category)                                    as issue_type_variety,
 
         -- Satisfacción promedio del cliente
         avg(customer_satisfaction_score)                            as avg_satisfaction,
         min(customer_satisfaction_score)                            as min_satisfaction,
 
-        -- ¿Tiene tickets sin resolver?
-        sum(case when is_unresolved then 1 else 0 end)              as unresolved_count,
+        -- ¿Tiene tickets sin resolver? (Basado en status real)
+        sum(case when status != 'closed' then 1 else 0 end)         as unresolved_count,
 
         -- ¿Alguna vez fue Critical?
         max(case when priority = 'critical' then 1 else 0 end)      as had_critical,
 
-        -- Canal más usado
-        mode(ticket_channel)                                        as preferred_channel,
+        -- Canal y Producto más frecuentes
+        mode() within group (order by channel)                      as preferred_channel,
+        mode() within group (order by product)                      as most_complained_product,
 
-        -- Producto más problemático
-        mode(product_purchased)                                     as most_complained_product,
-
-        -- Rango de fechas de actividad
-        min(ticket_created_date)                                    as first_purchase,
-        max(ticket_created_date)                                    as last_purchase
+        -- Rango de fechas de actividad (Usando ticket_created_date)
+        min(ticket_created_date)                                    as first_ticket,
+        max(ticket_created_date)                                    as last_ticket
 
     from base
     group by 1,2,3,4
@@ -71,7 +68,7 @@ segmented as (
 )
 
 select
-    customer_id,
+    customer_email,
     customer_name,
     customer_gender,
     customer_age,
@@ -84,8 +81,8 @@ select
     had_critical,
     preferred_channel,
     most_complained_product,
-    first_purchase,
-    last_purchase,
+    first_ticket,
+    last_ticket,
     recurrence_segment,
     churn_risk
 from segmented
