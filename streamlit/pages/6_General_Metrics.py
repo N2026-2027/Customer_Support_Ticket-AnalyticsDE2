@@ -10,11 +10,11 @@ st.set_page_config(page_title="General Metrics", page_icon="📈", layout="wide"
 render_sidebar()
 
 st.title("📈 General Metrics")
-st.caption("Fuente: `main_marts.fct_global_tickets` — Resumen global del pipeline")
+st.caption("Fuente: `support_200k.fct_global_tickets` — Resumen global del pipeline")
 st.markdown("---")
 
 # ── Carga de datos ────────────────────────────────────────────────────────────
-df = get_data("SELECT * FROM main_marts.fct_global_tickets")
+df = get_data("SELECT * FROM support_200k.fct_global_tickets")
 
 if df is None or df.empty:
     st.error("No hay datos en fct_global_tickets. Verificá que el pipeline haya corrido.")
