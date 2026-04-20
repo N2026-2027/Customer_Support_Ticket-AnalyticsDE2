@@ -1,22 +1,40 @@
-    # Eliminamos el bloque 'core' si no tenés una carpeta con ese nombre
-name: 'customer_support_tickets' # el nombre que ya tengas
+name: 'customer_support_tickets'
 version: '1.0.0'
 config-version: 2
 
+profile: 'customer_support_tickets'
+
+model-paths:  ["models"]
+seed-paths:   ["seeds"]
+test-paths:   ["tests"]
+macro-paths:  ["macros"]
+target-path:  "target"
+clean-targets: ["target", "dbt_packages"]
+
 models:
   customer_support_tickets:
-    # Configuración para models/staging
     staging:
       +materialized: view
-      +schema: staging
-    
-    # Configuración UNIFICADA para models/marts
+      +schema: staging          # → main_staging
     marts:
       +materialized: table
-      +schema: marts
-      # Aquí desactivamos la subcarpeta 'other' si no la vas a usar
-      other:
-        +enabled: false
+      +schema: marts            # → main_marts
 
-# Agregá esta línea:
-profile: 'customer_support_tickets'
+seeds:
+  customer_support_tickets:
+    +schema: main
+
+vars:
+  sla_threshold_hours: 24
+  duckdb_200k_path:     "/shared/duckdb/support_200k.duckdb"
+  duckdb_original_path: "/shared/duckdb/support_original.duckdb"
+
+# ── on-run-start ─────────────────────────────────────────────────────────────
+# 1. Crear schemas de salida (no existen hasta que dbt los materializa)
+# 2. ATTACH la base del dataset original para que los modelos de staging
+#    que referencian source('raw_original', ...) la puedan leer.
+#    Si ya está adjuntada (segunda corrida) el IF NOT EXISTS evita error.
+on-run-start:
+  - "CREATE SCHEMA IF NOT EXISTS main_staging"
+  - "CREATE SCHEMA IF NOT EXISTS main_marts"
+  - "ATTACH IF NOT EXISTS '{{ var('duckdb_original_path') }}' AS db_original (READ_ONLY)"

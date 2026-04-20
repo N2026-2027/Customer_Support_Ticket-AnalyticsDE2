@@ -1,4 +1,43 @@
 services:
+  # ── POSTGRESQL (capa operativa) ────────────────────────────────────────────
+  # pgAdmin: http://localhost:5050  admin@support.io / support1234
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin_password
+      POSTGRES_DB: support_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - support_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d support_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@support.io
+      PGADMIN_DEFAULT_PASSWORD: support1234
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - support_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
   kestra:
     build:
       context: .
@@ -31,11 +70,14 @@ services:
       - ./scripts:/app/scripts
       - ./storage:/app/storage
       - ./dbt:/app/dbt
-      - ./duckdb:/shared/duckdb
+      - ./duckdb:/shared/duckdb   # support_200k.duckdb + support_original.duckdb
       - ./data:/shared/data
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - support_net
+    depends_on:
+      postgres:
+        condition: service_healthy
     restart: unless-stopped
 
   dbt:
@@ -45,41 +87,12 @@ services:
     container_name: dbt
     volumes:
       - ./dbt:/usr/app/dbt
-      - ./duckdb:/shared/duckdb
+      - ./duckdb:/shared/duckdb   # support_200k.duckdb + support_original.duckdb
       - ./data:/shared/data
     working_dir: /usr/app/dbt/capstone_support
     environment:
       - DBT_PROFILES_DIR=/usr/app/dbt
     command: tail -f /dev/null
-    networks:
-      - support_net
-
-  superset:
-    image: apache/superset:latest
-    container_name: superset
-    environment:
-      SUPERSET_SECRET_KEY: "support_secret_key_123"
-    ports:
-      - "8088:8088"
-    volumes:
-      - ./duckdb:/shared/duckdb
-      - superset_home:/app/superset_home
-    # URI para conectar en Superset:
-    # duckdb:////shared/duckdb/support.duckdb?access_mode=READ_ONLY
-    command: >
-      bash -c "pip install --quiet
-        'duckdb==0.10.3'
-        'duckdb-engine==0.13.0'
-        'sqlalchemy==1.4.52' &&
-      superset db upgrade &&
-      superset fab create-admin
-        --username admin
-        --firstname Admin
-        --lastname User
-        --email admin@support.io
-        --password support1234 || true &&
-      superset init &&
-      /usr/bin/run-server.sh"
     networks:
       - support_net
 
@@ -92,22 +105,22 @@ services:
       - JUPYTER_TOKEN=support
     volumes:
       - ./notebooks:/home/jovyan/work
-      - ./duckdb:/shared/duckdb
+      - ./duckdb:/shared/duckdb   # acceso a ambas bases
       - ./data:/shared/data
     networks:
       - support_net
 
   # ── STREAMLIT DASHBOARD ────────────────────────────────────────────────────
   # Código fuente en ./streamlit/ (app.py + pages/ + utils/)
-  # Para levantar: make streamlit
-  # Para ver logs:  make streamlit-logs
+  # Para levantar: make up
+  # Para ver logs:  make logs-streamlit
   # Dashboard:      http://localhost:8501
   streamlit:
     image: python:3.11-slim
     container_name: streamlit
     volumes:
-      - ./streamlit:/app          # carpeta del dashboard
-      - ./duckdb:/shared/duckdb   # acceso read-only al DuckDB
+      - ./streamlit:/app
+      - ./duckdb:/shared/duckdb   # acceso a ambas bases DuckDB
     working_dir: /app
     ports:
       - "8501:8501"
@@ -145,4 +158,5 @@ networks:
     driver: bridge
 
 volumes:
-  superset_home:
+  postgres_data:
+  pgadmin_data:

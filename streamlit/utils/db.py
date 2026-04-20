@@ -1,51 +1,52 @@
-import os
+# streamlit/utils/db.py
 import duckdb
 import pandas as pd
 import streamlit as st
 
-# ── Rutas candidatas en orden de prioridad ────────────────────────────────────
-# 1. Docker volume  2. GitHub Codespaces  3. Relativa al repo
-_CANDIDATES = [
-    "/shared/duckdb/support.duckdb",
-    "/workspaces/CapstoneProjectDE2/duckdb/support.duckdb",
-    os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", "..", "duckdb", "support.duckdb")
-    ),
-]
+# ── Bases DuckDB ──────────────────────────────────────────────────────────────
+# La base principal es support_200k.duckdb (target dev del profile dbt).
+# Los modelos combinados (fct_global_tickets, marts) se materializan aquí.
+DB_PATH          = "/shared/duckdb/support_200k.duckdb"
+DB_PATH_ORIGINAL = "/shared/duckdb/support_original.duckdb"
 
-def _resolve_db_path() -> str:
-    for p in _CANDIDATES:
-        if os.path.exists(p):
-            return p
-    return _CANDIDATES[0]   # fallback — el error se muestra en get_data()
+# ── Conexión singleton ────────────────────────────────────────────────────────
+@st.cache_resource
+def _get_connection(path: str = DB_PATH):
+    """Conexión read-only compartida entre páginas (una por base)."""
+    return duckdb.connect(path, read_only=True)
 
-DB_PATH = _resolve_db_path()
-
-
-@st.cache_data(ttl=300, show_spinner="Consultando DuckDB...")
-def get_data(query: str) -> pd.DataFrame:
-    """Lee de DuckDB en modo read-only con cache de 5 minutos."""
+# ── Función principal — usada por todas las páginas ───────────────────────────
+def get_data(sql: str, db: str = DB_PATH) -> pd.DataFrame:
+    """
+    Ejecuta SQL sobre DuckDB y retorna un DataFrame.
+    Alias principal usado por todas las páginas (get_data).
+    Retorna DataFrame vacío en caso de error para no crashear la UI.
+    """
     try:
-        with duckdb.connect(DB_PATH, read_only=True) as con:
-            return con.execute(query).df()
+        con = _get_connection(db)
+        return con.execute(sql).df()
     except Exception as e:
-        st.error(f"❌ Error conectando a DuckDB: `{e}`")
-        st.info(
-            f"📁 Ruta buscada: `{DB_PATH}`\n\n"
-            "Asegurate de haber corrido `make pipeline` antes de levantar Streamlit."
-        )
+        st.error(f"Error en consulta SQL: {e}")
         return pd.DataFrame()
 
+# Alias por compatibilidad con código que usa query()
+def query(sql: str, db: str = DB_PATH) -> pd.DataFrame:
+    return get_data(sql, db)
 
-def db_status() -> dict:
-    """Devuelve estado de la DB para el sidebar."""
+# ── Status para el SQL Explorer ───────────────────────────────────────────────
+def db_status(db: str = DB_PATH) -> dict:
+    """
+    Retorna dict con ok:bool, tables:list, error:str.
+    Usado por 3_Explorer.py para mostrar el estado de la conexión.
+    """
     try:
-        with duckdb.connect(DB_PATH, read_only=True) as con:
-            tables = con.execute("""
-                SELECT table_schema || '.' || table_name AS full_name
-                FROM information_schema.tables
-                ORDER BY 1
-            """).fetchall()
-        return {"ok": True, "path": DB_PATH, "tables": [t[0] for t in tables]}
+        con = _get_connection(db)
+        tables = con.execute("""
+            SELECT table_schema || '.' || table_name AS full_name
+            FROM information_schema.tables
+            WHERE table_schema NOT IN ('information_schema', 'pg_catalog')
+            ORDER BY 1
+        """).fetchall()
+        return {"ok": True, "tables": [t[0] for t in tables]}
     except Exception as e:
-        return {"ok": False, "path": DB_PATH, "error": str(e)}
+        return {"ok": False, "tables": [], "error": str(e)}

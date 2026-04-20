@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "support"."main_main"."customer_support_tickets" ("Ticket ID" varchar,"Customer Name" text,"Customer Email" text,"Customer Age" varchar,"Customer Gender" text,"Product Purchased" text,"Date of Purchase" date,"Ticket Type" text,"Ticket Subject" text,"Ticket Description" text,"Ticket Status" text,"Resolution" text,"Ticket Priority" text,"Ticket Channel" text,"First Response Time" timestamp without time zone,"Time to Resolution" timestamp without time zone,"Customer Satisfaction Rating" integer)
+  ;
+    -- dbt seed --
+    
+          COPY "support"."main_main"."customer_support_tickets" FROM '/usr/app/dbt/capstone_support/seeds/customer_support_tickets.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

@@ -4,7 +4,7 @@
     
 
     create  table
-      "support"."main_marts"."mart_channel_efficiency__dbt_tmp"
+      "support_200k"."main_marts"."mart_channel_efficiency__dbt_tmp"
   
     as (
       
@@ -22,7 +22,7 @@
 -- ============================================================
 
 with base as (
-    select * from "support"."main_staging"."stg_tickets"
+    select * from "support_200k"."main_staging"."stg_tickets"
 ),
 
 -- Global benchmarks para comparar

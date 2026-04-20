@@ -1,39 +1,30 @@
 
 
-with source as (
-    select * from "support"."raw"."customer_support_tickets"
-),
-
-cleaned as (
-    select
-        md5(cast(coalesce(cast("Customer Name" as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast("Customer Email" as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as customer_id,
-        cast("Ticket ID"           as varchar)  as ticket_id,
-        lower(trim("Customer Name"))            as customer_name,
-        cast("Customer Age"        as integer)  as customer_age,
-        lower(trim("Customer Gender"))          as customer_gender,
-        lower(trim("Product Purchased"))        as product_purchased,
-        cast("Date of Purchase"    as date)     as purchase_date,
-        lower(trim("Ticket Type"))              as ticket_type,
-        lower(trim("Ticket Subject"))           as ticket_subject,
-        lower(trim("Ticket Status"))            as ticket_status,
-        lower(trim("Ticket Priority"))          as ticket_priority,
-        lower(trim("Ticket Channel"))           as ticket_channel,
-        
-        -- Cálculo de horas
-        epoch(cast("First Response Time" as timestamp)) / 3600.0  as first_response_hrs,
-        epoch(cast("Time to Resolution"  as timestamp)) / 3600.0  as resolution_hrs,
-        
-        -- Booleanos para KPIs
-        (lower(trim("Ticket Status")) = 'open' and "First Response Time" is null) as is_open_no_response,
-        (lower(trim("Ticket Status")) != 'resolved') as is_unresolved,
-        
-        -- Extracción de horas (ambas necesarias para los marts)
-        extract(hour from cast("First Response Time" as timestamp)) as first_response_hour_of_day,
-        extract(hour from cast("Time to Resolution"  as timestamp)) as resolution_hour_of_day,
-
-        cast("Customer Satisfaction Rating" as double) as satisfaction_rating,
-        _ingested_at
-    from source
+with src as (
+    select * from "support_original"."main"."customer_support_tickets"
 )
 
-select * from cleaned
+select
+    cast(src."Ticket ID" as varchar) as ticket_id,
+    src."Customer Email" as customer_email, -- Agregado para el JOIN de fct_tickets
+    lower(trim(src."Product Purchased")) as product,
+    lower(trim(src."Ticket Channel")) as ticket_channel,
+    lower(trim(src."Ticket Type")) as category,   -- Renombrado para que coincida con fct_tickets
+    lower(trim(src."Ticket Status")) as status,     -- Renombrado para que coincida con fct_tickets
+    lower(trim(src."Ticket Priority")) as priority, -- Renombrado para que coincida con fct_tickets
+    
+    cast(src."Customer Satisfaction Rating" as double) as customer_satisfaction_score,
+    cast(src."Date of Purchase" as date) as ticket_created_date,
+    
+    -- Columnas que no existen en el original pero fct_tickets pide (llenar con NULL o default)
+    cast(null as date) as ticket_resolved_date,
+    cast(null as double) as first_response_time_hours,
+    cast(null as double) as resolution_time_hours,
+    cast(null as integer) as issue_complexity_score,
+    false as escalated,
+    false as sla_breached,
+    cast(null as integer) as previous_tickets,
+
+    current_timestamp as _ingested_at,
+    'original' as dataset_source
+from src

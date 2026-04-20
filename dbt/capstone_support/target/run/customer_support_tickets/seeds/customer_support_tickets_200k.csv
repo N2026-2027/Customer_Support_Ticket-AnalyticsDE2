@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "support"."main_main"."customer_support_tickets_200k" ("ticket_id" integer,"customer_name" text,"customer_email" text,"product" text,"category" text,"issue_description" text,"resolution_notes" text,"priority" text,"status" text,"channel" text,"region" text,"customer_age" integer,"customer_gender" text,"subscription_type" text,"customer_tenure_months" integer,"previous_tickets" integer,"customer_satisfaction_score" integer,"first_response_time_hours" float8,"resolution_time_hours" float8,"ticket_created_date" date,"ticket_resolved_date" date,"escalated" text,"sla_breached" text,"operating_system" text,"browser" text,"payment_method" text,"language" text,"preferred_contact_time" text,"issue_complexity_score" integer,"customer_segment" text)
+  ;
+    -- dbt seed --
+    
+          COPY "support"."main_main"."customer_support_tickets_200k" FROM '/usr/app/dbt/capstone_support/seeds/customer_support_tickets_200k.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

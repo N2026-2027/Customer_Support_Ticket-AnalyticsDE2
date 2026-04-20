@@ -1,8 +1,52 @@
 version: 2
 
+# ============================================================
+# DOS sources — uno por base DuckDB
+#
+# source 'raw_200k':
+#   database: support_200k   → support_200k.duckdb
+#   schema:   main            → donde escribe Spark
+#   tabla:    customer_support_tickets_200k
+#
+# source 'raw_original':
+#   database: support_original → support_original.duckdb
+#   schema:   main
+#   tabla:    customer_support_tickets
+#
+# Con dbt-duckdb, 'database' en el source hace que dbt busque
+# en esa base específica. El adapter maneja el ATTACH automático
+# cuando el target es distinto a la database del source.
+# ============================================================
+
 sources:
-  - name: raw_data
-    schema: main # Spark por defecto carga en 'main'
+  - name: raw_200k
+    database: support_200k       # → support_200k.duckdb
+    schema: main
+    description: "Dataset 200k sintético — ingresado por Spark"
     tables:
-      - name: tickets_200k_raw
-      - name: tickets_original_raw
+      - name: customer_support_tickets_200k
+        description: "200,000 tickets, snake_case, 30 columnas"
+        columns:
+          - name: ticket_id
+            tests: [not_null]
+          - name: customer_email
+            tests: [not_null]
+          - name: priority
+            tests:
+              - accepted_values:
+                  values: ['Low', 'Medium', 'High', 'Urgent', 'Critical',
+                           'low', 'medium', 'high', 'urgent', 'critical']
+
+  - name: raw_original
+    database: support_original   # → support_original.duckdb
+    schema: main
+    description: "Dataset original Kaggle — ingresado por Spark"
+    tables:
+      - name: customer_support_tickets
+        description: "18,762 tickets, Title Case headers, 17 columnas"
+        columns:
+          - name: Ticket ID
+            tests: [not_null]
+          - name: Customer Email
+            tests: [not_null]
+

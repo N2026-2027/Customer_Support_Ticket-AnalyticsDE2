@@ -1,13 +1,49 @@
+# dbt/profiles.yml
+#
+# Tres outputs — uno por base DuckDB + uno combinado:
+#
+#   dev_200k    → modelos del dataset 200k     (support_200k.duckdb)
+#   dev_original→ modelos del dataset original (support_original.duckdb)
+#   dev         → modelos combinados / marts   (support_200k.duckdb, lee ambas vía ATTACH)
+#
+# Uso:
+#   dbt run --target dev_200k       ← solo modelos del 200k
+#   dbt run --target dev_original   ← solo modelos del original
+#   dbt run                         ← target por defecto = dev (combinado)
+#
+# NOTA sobre ATTACH en DuckDB:
+#   El target 'dev' usa support_200k.duckdb como base principal y adjunta
+#   support_original.duckdb como 'db_original'. Los sources del original
+#   se referencian como db_original.main.customer_support_tickets.
+
 customer_support_tickets:
   target: dev
   outputs:
+
+    # ── Target para el dataset 200k ──────────────────────────────────────────
+    dev_200k:
+      type: duckdb
+      path: /shared/duckdb/support_200k.duckdb
+      database: support_200k
+      schema: main
+      threads: 4
+
+    # ── Target para el dataset original ─────────────────────────────────────
+    dev_original:
+      type: duckdb
+      path: /shared/duckdb/support_original.duckdb
+      database: support_original
+      schema: main
+      threads: 4
+
+    # ── Target combinado (default) ───────────────────────────────────────────
+    # Base principal: support_200k.duckdb
+    # La base original se adjunta con ATTACH via on-run-start en dbt_project.yml
     dev:
       type: duckdb
-      path: /shared/duckdb/support.duckdb
+      path: /shared/duckdb/support_200k.duckdb
+      database: support_200k
+      schema: main
       threads: 4
-      # Agregamos esto para que dbt pueda manejar formatos modernos y fechas
       extensions:
-        - icu
-        - parquet
-      # Forzamos a que dbt trabaje en un esquema limpio
-      schema: main 
+        - httpfs

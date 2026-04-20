@@ -1,38 +1,29 @@
 {{ config(materialized='table') }}
 
 -- ============================================================
--- mart_channel_efficiency
--- Pregunta central: ¿Qué canal de atención es más eficiente?
---
--- Responde:
---   Q1. ¿Chat vs Email vs Phone vs Social: cuál resuelve más rápido?
---   Q2. ¿Cada canal atiende bien todos los tipos de ticket o hay especialización?
---   Q3. ¿El canal cambia el nivel de satisfacción del cliente?
---   Q4. ¿Hay canales donde los tickets críticos se atascan más?
---   Q5. ¿Qué canal tiene mayor volumen pero peor performance? (cuello de botella)
+-- mart_channel_efficiency (Basado en fct_tickets)
 -- ============================================================
 
 with base as (
-    select * from {{ ref('stg_tickets') }}
+    select * from {{ ref('fct_tickets') }}
 ),
 
 -- Global benchmarks para comparar
 global_bench as (
     select
         count(*)                                                as g_total,
-        avg(satisfaction_rating)                               as g_avg_sat,
-        round(100.0 * sum(case when ticket_status='closed' then 1 else 0 end)
-              / count(*), 1)                                   as g_pct_closed,
-        round(100.0 * sum(case when is_open_no_response then 1 else 0 end)
-              / count(*), 1)                                   as g_pct_no_response
+        avg(customer_satisfaction_score)                        as g_avg_sat,
+        round(100.0 * sum(case when is_resolved = TRUE then 1 else 0 end)
+              / count(*), 1)                                   as g_pct_closed
     from base
 ),
 
 channel_metrics as (
     select
-        b.ticket_channel,
-        b.ticket_type,
-        b.ticket_priority,
+        b.channel as ticket_channel,
+        -- Traemos info de la categoría (puedes unir con dim_ticket_type si prefieres nombres)
+        b.status as ticket_status,
+        b.priority as ticket_priority,
 
         count(*)                                                as total_tickets,
 
@@ -40,41 +31,36 @@ channel_metrics as (
         round(100.0 * count(*) / max(g.g_total), 1)            as pct_of_all_tickets,
 
         -- Resolución
-        sum(case when b.ticket_status='closed' then 1 else 0 end)  as resolved_count,
-        round(100.0 * sum(case when b.ticket_status='closed' then 1 else 0 end)
+        sum(case when b.is_resolved = TRUE then 1 else 0 end)  as resolved_count,
+        round(100.0 * sum(case when b.is_resolved = TRUE then 1 else 0 end)
               / count(*), 1)                                   as pct_resolved,
 
-        -- Tickets sin ninguna respuesta aún
-        sum(case when b.is_open_no_response then 1 else 0 end) as no_response_count,
-        round(100.0 * sum(case when b.is_open_no_response then 1 else 0 end)
-              / count(*), 1)                                   as pct_no_response,
-
         -- Satisfacción
-        avg(b.satisfaction_rating)                             as avg_satisfaction,
+        avg(b.customer_satisfaction_score)                     as avg_satisfaction,
 
         -- Críticos sin resolver
-        sum(case when b.ticket_priority='critical'
-                  and b.ticket_status != 'closed' then 1 else 0 end) as critical_open,
+        sum(case when b.priority='critical'
+                  and b.is_resolved = FALSE then 1 else 0 end) as critical_open,
 
         -- Comparación vs benchmark global
         round(
-            (100.0 * sum(case when b.ticket_status='closed' then 1 else 0 end) / count(*))
+            (100.0 * sum(case when b.is_resolved = TRUE then 1 else 0 end) / count(*))
             - max(g.g_pct_closed)
         , 1)                                                   as resolution_vs_global,
 
         round(
-            coalesce(avg(b.satisfaction_rating), 3) - max(g.g_avg_sat)
+            coalesce(avg(b.customer_satisfaction_score), 3) - max(g.g_avg_sat)
         , 2)                                                   as satisfaction_vs_global,
 
-        -- Eficiencia compuesta: ¿canal bueno o malo?
+        -- Eficiencia compuesta
         case
-            when round(100.0 * sum(case when b.ticket_status='closed' then 1 else 0 end)
+            when round(100.0 * sum(case when b.is_resolved = TRUE then 1 else 0 end)
                        / count(*), 1) > max(g.g_pct_closed)
-             and coalesce(avg(b.satisfaction_rating),3) > max(g.g_avg_sat)
+             and coalesce(avg(b.customer_satisfaction_score),3) > max(g.g_avg_sat)
                 then '⭐ Mejor que promedio'
-            when round(100.0 * sum(case when b.ticket_status='closed' then 1 else 0 end)
+            when round(100.0 * sum(case when b.is_resolved = TRUE then 1 else 0 end)
                        / count(*), 1) < max(g.g_pct_closed)
-             and coalesce(avg(b.satisfaction_rating),3) < max(g.g_avg_sat)
+             and coalesce(avg(b.customer_satisfaction_score),3) < max(g.g_avg_sat)
                 then '⚠️ Peor que promedio'
             else '➡️ Promedio'
         end                                                    as channel_rating

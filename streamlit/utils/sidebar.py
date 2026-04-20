@@ -1,40 +1,24 @@
+# streamlit/utils/sidebar.py
 import streamlit as st
-from utils.db import db_status
-
+from utils.db import get_data, DB_PATH
 
 def render_sidebar():
-    """Sidebar común: estado de DB + navegación a las 5 páginas."""
+    """Sidebar con estado del stack — reutilizable en todas las páginas."""
     with st.sidebar:
-        st.markdown("## 🗄️ Base de datos")
-        status = db_status()
+        st.header("🛠️ Stack Status")
 
-        if status["ok"]:
-            st.success("DuckDB conectado ✅")
-            st.caption(f"`{status['path']}`")
-            with st.expander("Tablas disponibles"):
-                for t in status["tables"]:
-                    if "mart_" in t:
-                        icon = "📋"
-                    elif "stg_" in t:
-                        icon = "🔵"
-                    elif "streaming" in t:
-                        icon = "⚡"
-                    else:
-                        icon = "⚫"
-                    st.markdown(f"{icon} `{t}`")
-        else:
-            st.error("DuckDB no disponible ❌")
-            st.caption(status.get("error", ""))
-            st.warning("Corré `make pipeline` para cargar los datos.")
+        # Estado DuckDB 200k
+        try:
+            df = get_data("SELECT COUNT(*) AS n FROM main_marts.fct_global_tickets")
+            n = int(df['n'].iloc[0]) if not df.empty else 0
+            st.success(f"DuckDB 200k: ✅ {n:,} tickets")
+        except Exception as e:
+            st.error(f"DuckDB 200k: ❌ {e}")
 
-        st.markdown("---")
-        st.markdown("## 🔗 Páginas")
-        st.page_link("app.py",                        label="🏠 Home")
-        st.page_link("pages/1_Product_Health.py",     label="🏥 Product Health")
-        st.page_link("pages/2_Churn_Risk.py",         label="🚨 Churn Risk")
-        st.page_link("pages/3_Explorer.py",           label="🗄️ SQL Explorer")
-        st.page_link("pages/4_Channel_Efficiency.py", label="📡 Channel Efficiency")
-        st.page_link("pages/5_Ticket_Funnel.py",      label="🔽 Ticket Funnel")
-
-        st.markdown("---")
-        st.caption("Capstone DE Zoomcamp 2026")
+        st.info("Spark 3.3.2: Batch")
+        st.divider()
+        st.write("**Versión:** 1.0.0")
+        st.caption(
+            "[Dataset Kaggle](https://www.kaggle.com/datasets/mirzayasirabdullah07/"
+            "customer-support-tickets-dataset-200k-records)"
+        )

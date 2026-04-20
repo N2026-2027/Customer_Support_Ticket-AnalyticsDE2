@@ -1,8 +1,9 @@
 version: 2
 
 models:
-  - name: stg_tickets
-    description: "Staging model para los tickets de soporte"
+  # --- Modelo 1: Tickets 200k ---
+  - name: stg_tickets_200k
+    description: "Modelo de staging que limpia el dataset principal de 200k tickets"
     columns:
       - name: ticket_id
         description: "ID único del ticket"
@@ -14,10 +15,25 @@ models:
               config:
                 severity: warn
 
-      - name: ticket_priority
-        description: "Prioridad del ticket (normalizada a minúsculas)"
+      - name: priority
+        description: "Prioridad del ticket (low, medium, high, critical)"
         tests:
           - accepted_values:
               values: ['low', 'medium', 'high', 'critical']
               config:
                 severity: warn
+
+  # --- Modelo 2: Usuarios ---
+  - name: stg_users
+    description: "Modelo de staging para la dimensión de usuarios/clientes"
+    columns:
+      - name: user_id
+        description: "Clave subrogada generada para el usuario"
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        description: "Correo electrónico del cliente"
+        tests:
+          - not_null

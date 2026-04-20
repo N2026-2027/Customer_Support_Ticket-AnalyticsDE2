@@ -1,0 +1,1 @@
+ATTACH IF NOT EXISTS '/shared/duckdb/support_original.duckdb' AS db_original (READ_ONLY)

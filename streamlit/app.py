@@ -1,68 +1,71 @@
 import streamlit as st
 
-# Configuración centralizada (SOLO en app.py)
+# 1. Configuración obligatoria al inicio
 st.set_page_config(
-    page_title="CX Support Analytics",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    page_title="DE Support Pipeline",
+    page_icon="⚙️",
+    layout="wide"
 )
 
-# Estilo personalizado para las tarjetas
+# 2. Estilos CSS Consolidados
 st.markdown("""
     <style>
-    .stInfo {
-        min-height: 180px;
+    .stInfo { min-height: 190px; }
+    /* Mejora visual para las tarjetas */
+    div[data-testid="stVerticalBlock"] > div:has(div.stInfo) {
+        border-radius: 10px;
+        padding: 5px;
     }
     </style>
-    """, unsafe_allow_stdio=True)
+    """, unsafe_allow_html=True)
 
-st.markdown("""
-# 📊 Customer Support Analytics
-### Capstone DE Zoomcamp · Spark · DuckDB · dbt · Kestra · Streamlit
-""")
+# 3. Encabezado
+st.title("📊 Customer Support Analytics")
+st.markdown("### Capstone DE Zoomcamp · Spark · DuckDB · dbt · Kestra")
 st.markdown("---")
 
-# Fila 1: KPIs Globales y Salud
-col1, col2, col3 = st.columns(3)
-with col1:
-    st.info("### 📈 General Metrics\nResumen global de tickets, tiempos de resolución y cumplimiento de SLA.")
-    st.page_link("pages/6_General_Metrics.py", label="Ver Dashboard General →")
+# 4. Grid de Navegación (Uso de contenedores para orden)
+def create_card(title, description, link_path, link_label):
+    st.info(f"### {title}\n{description}")
+    st.page_link(link_path, label=link_label)
 
-with col2:
-    st.info("### 🏥 Product Health\nHealth score por producto, análisis de riesgo y críticos sin resolver.")
-    st.page_link("pages/1_Product_Health.py", label="Analizar Productos →")
+# Fila 1
+row1 = st.columns(3)
+with row1[0]:
+    create_card("📈 General Metrics", "Resumen global de tickets y cumplimiento de SLA.", "pages/6_General_Metrics.py", "Ver Dashboard →")
+with row1[1]:
+    create_card("🏥 Product Health", "Health score por producto y análisis de riesgo.", "pages/1_Product_Health.py", "Analizar Productos →")
+with row1[2]:
+    create_card("🚨 Churn Risk", "Identificación de clientes y predicción de abandono.", "pages/2_Churn_Risk.py", "Ver Riesgo →")
 
-with col3:
-    st.info("### 🚨 Churn Risk\nIdentificación de clientes recurrentes y predicción de abandono.")
-    st.page_link("pages/2_Churn_Risk.py", label="Ver Riesgo de Churn →")
+st.write("") # Espaciador
 
-st.markdown(" ") # Espaciador
+# Fila 2
+row2 = st.columns(3)
+with row2[0]:
+    create_card("📡 Channel Efficiency", "Comparativa de canales vs benchmark global.", "pages/4_Channel_Efficiency.py", "Ver Canales →")
+with row2[1]:
+    create_card("🔽 Ticket Funnel", "Análisis de cuellos de botella por problema.", "pages/5_Ticket_Funnel.py", "Ver Funnel →")
+with row2[2]:
+    create_card("🗄️ SQL Explorer", "Consola interactiva sobre DuckDB.", "pages/3_Explorer.py", "Abrir Consola →")
 
-# Fila 2: Eficiencia y Exploración
-col4, col5, col6 = st.columns(3)
-with col4:
-    st.info("### 📡 Channel Efficiency\nComparativa de canales (Email, Chat, Phone) vs benchmark global.")
-    st.page_link("pages/4_Channel_Efficiency.py", label="Ver Canales →")
-
-with col5:
-    st.info("### 🔽 Ticket Funnel\nAnálisis de cuellos de botella y 'dead-ends' por tipo de problema.")
-    st.page_link("pages/5_Ticket_Funnel.py", label="Ver Funnel →")
-
-with col6:
-    st.info("### 🗄️ SQL Explorer\nConsola interactiva para consultas libres sobre DuckDB y descarga de reportes.")
-    st.page_link("pages/3_Explorer.py", label="Abrir Consola SQL →")
-
+# Fila 3: Otros
 st.markdown("---")
+row3 = st.columns(2)
+with row3[0]:
+    create_card("🎯 SLA Deep Dive", "Análisis detallado de tiempos de respuesta.", "pages/6_SLA_Deep_Dive.py", "Ir al Deep Dive →")
+with row3[1]:
+    create_card("⚖️ Benchmarking", "Comparativa de escalabilidad (200k vs Original).", "pages/7_Dataset_Benchmarking.py", "Ver Benchmarking →")
 
-# Sección de estado del Pipeline (Data Engineering check)
+# 5. Sidebar & Footer
 with st.sidebar:
     st.header("🛠️ Stack Status")
     st.success("Spark 3.3.2: OK")
-    st.success("DuckDB Storage: Connected")
+    st.success("DuckDB: Connected")
+    st.divider()
     st.write("**Versión:** 1.0.0-beta")
-    
+
 st.caption(
-    "Dataset: [Customer Support Ticket Dataset — Kaggle](https://kaggle.com) "
-    "| Pipeline: Spark (Batch) → Postgres & DuckDB → dbt → Streamlit"
+    "Dataset: [Customer Support Ticket Dataset](https://kaggle.com) | "
+    "Pipeline: Spark → DuckDB → dbt → Streamlit"
 )
