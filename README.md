@@ -400,12 +400,3 @@ All sections developed for the comprehensive analytics of this project:
 | **General Metrics** <br><img src="./dashboard images/Screenshot 2026-04-20 212625.png" width="24000"/> | **General Metrics — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 212647.png" width="24000"/> |
 | **SLA & Response Performance** <br><img src="./dashboard images/Screenshot 2026-04-20 212657.png" width="24000"/> | **Dataset Benchmarking** <br><img src="./dashboard images/Screenshot 2026-04-20 212708.png" width="24000"/> |
             *Capstone — Data Engineering Zoomcamp*
-
-| | |
-|:---:|:---:|
-| **Product Health** <br><img src="./dashboard images/Screenshot 2026-04-20 211741.png" width="24000"/> | **Product Health — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 211806.png" width="24000"/> |
-| **Repeat Customers & Churn Risk** <br><img src="./dashboard images/Screenshot 2026-04-20 211850.png" width="24000"/> | **Channel Efficiency** <br><img src="./dashboard images/Screenshot 2026-04-20 212605.png" width="24000"/> |
-| **Channel Efficiency — Detail** <br><img src="./dashboard images/Screenshot 2026-04-20 212616.png" width="24000"/> | **Ticket Funnel** <br><img src="./dashboard images/Screenshot 2026-04-20 212632.png" width="1200"/> |
-| **General Metrics** <br><img src="./dashboard images/Screenshot 2026-04-20 212625.png" width="24000"/> | **General Metrics — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 212647.png" width="24000"/> |
-| **SLA & Response Performance** <br><img src="./dashboard images/Screenshot 2026-04-20 212657.png" width="24000"/> | **Dataset Benchmarking** <br><img src="./dashboard images/Screenshot 2026-04-20 212708.png" width="24000"/> |
-                *Capstone — Data Engineering Zoomcamp*
