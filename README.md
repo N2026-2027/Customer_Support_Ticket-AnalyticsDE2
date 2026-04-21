@@ -1,26 +1,25 @@
 # 📊 Customer Support Analytics — DE Capstone
-
+ 
 > **Stack:** Apache Spark · DuckDB · dbt · Kestra · PostgreSQL · Streamlit ·
 > **Dataset:** [Customer Support Tickets 200k — Kaggle](https://www.kaggle.com/datasets/mirzayasirabdullah07/customer-support-tickets-dataset-200k-records)
-> **Dataset:** [Customer Support Ticket Dataset](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset) — 8,469 tickets · 17 columnas
+> **Dataset:** [Customer Support Ticket Dataset](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset) — 8,469 tickets · 17 columns
+ 
 ---
+ 
 ## 📋 Problem Description
  
-Las empresas de tecnología de consumo reciben miles de tickets de soporte al mes. Sin análisis estructurado, es imposible responder preguntas críticas como:
+Consumer technology companies receive thousands of support tickets every month. Without structured analysis, it is impossible to answer critical questions such as:
  
-- ¿Qué productos generan más quejas críticas sin resolver y están en riesgo de generar churn?
-- ¿Qué canal de soporte es realmente el más eficiente?
-- ¿Dónde exactamente se atascan los tickets en el pipeline de atención?
-- ¿Qué clientes están a punto de abandonar por experiencias repetidamente malas?
- 
-Este proyecto construye un **pipeline de datos end-to-end** que ingesta tickets desde Kaggle, los transforma con dbt sobre DuckDB, y expone respuestas concretas en un dashboard interactivo con Streamlit. El objetivo: que cualquier equipo de CX o producto detecte fricciones operativas y tome decisiones basadas en datos.
+- Which products generate the most unresolved critical complaints and are at risk of driving churn?
+- Which support channel is truly the most efficient?
+- Where exactly do tickets get stuck in the support pipeline?
+- Which customers are about to leave due to repeatedly bad experiences?
+This project builds an **end-to-end data pipeline** that ingests tickets from Kaggle, transforms them with dbt on DuckDB, and exposes concrete answers in an interactive Streamlit dashboard. The goal: enable any CX or product team to detect operational friction and make data-driven decisions.
  
 ---
----
----
-
-## 🏗️ Arquitectura del Pipeline
-
+ 
+## 🏗️ Pipeline Architecture
+ 
 ```
 ┌─────────────┐    ┌──────────────┐    ┌──────────────┐    ┌────────────────┐
 │  Kaggle CSV │───▶│  Apache Spark│───▶│  PostgreSQL  │    │   Streamlit    │
@@ -33,15 +32,15 @@ Este proyecto construye un **pipeline de datos end-to-end** que ingesta tickets 
                                        └──────────────┘    │     Marts      │
                                                            └────────────────┘
                     ┌──────────────┐
-                    │    Kestra    │  Orquestación del pipeline (scheduler)
+                    │    Kestra    │  Pipeline orchestration (scheduler)
                     │  Scheduler  │
                     └──────────────┘
 ```
-
+ 
 ---
-
+ 
 ## ⭐ Star Schema (Data Warehouse)
-
+ 
 ```mermaid
 erDiagram
     fact_tickets {
@@ -64,7 +63,7 @@ erDiagram
         BOOLEAN is_resolved
         VARCHAR satisfaction_band
     }
-
+ 
     dim_customer {
         VARCHAR customer_sk PK
         VARCHAR customer_email
@@ -80,7 +79,7 @@ erDiagram
         VARCHAR payment_method
         VARCHAR language
     }
-
+ 
     dim_product {
         VARCHAR product_sk PK
         VARCHAR product
@@ -89,14 +88,14 @@ erDiagram
         VARCHAR operating_system
         VARCHAR browser
     }
-
+ 
     dim_ticket_type {
         VARCHAR ticket_type_sk PK
         VARCHAR category
         VARCHAR priority
         INTEGER priority_rank
     }
-
+ 
     dim_date {
         DATE    date_id PK
         INTEGER year
@@ -106,34 +105,34 @@ erDiagram
         VARCHAR day_name
         BOOLEAN is_weekend
     }
-
+ 
     fact_tickets }o--|| dim_customer    : "customer_sk"
     fact_tickets }o--|| dim_product     : "product_sk"
     fact_tickets }o--|| dim_ticket_type : "ticket_type_sk"
     fact_tickets }o--|| dim_date        : "date_id"
 ```
-
+ 
 ---
-
+ 
 ## 📁 Project Structure
-
+ 
 ```
 Customer_Support_Ticket-AnalyticsDE2/
-├── Makefile                              # Orquestación local
+├── Makefile                              # Local orchestration
 ├── README.md
-├── docker-compose.yml                    # Todos los servicios
+├── docker-compose.yml                    # All services
 │
 ├── data/                                 # (gitignored)
 │   ├── customer_support_tickets_200k.csv
-│   └── customer_support_tickets.csv      # dataset original (opcional)
+│   └── customer_support_tickets.csv      # original dataset (optional)
 │
 ├── scripts/
-│   ├── download_dataset.py               # Descarga desde Kaggle API
-│   ├── spark_batch_process.py            # Ingesta CSV → PostgreSQL + DuckDB
+│   ├── download_dataset.py               # Download from Kaggle API
+│   ├── spark_batch_process.py            # CSV ingestion → PostgreSQL + DuckDB
 │   └── spark_ingestion.py                # (legacy multi-dataset)
 │
 ├── dbt/
-│   ├── profiles.yml                      # Conexión DuckDB
+│   ├── profiles.yml                      # DuckDB connection
 │   ├── dbt_project.yml
 │   ├── packages.yml                      # dbt_utils
 │   └── capstone_support/
@@ -141,8 +140,8 @@ Customer_Support_Ticket-AnalyticsDE2/
 │           ├── staging/
 │           │   ├── sources.yml
 │           │   ├── schema.yml
-│           │   ├── stg_tickets_200k.sql       # limpieza + tipado
-│           │   └── stg_tickets_original.sql   # alineación al schema común
+│           │   ├── stg_tickets_200k.sql       # cleaning + typing
+│           │   └── stg_tickets_original.sql   # alignment to common schema
 │           └── marts/
 │               ├── schema.yml
 │               │
@@ -151,10 +150,10 @@ Customer_Support_Ticket-AnalyticsDE2/
 │               ├── dim_customer.sql
 │               ├── dim_product.sql
 │               ├── dim_ticket_type.sql
-│               ├── fact_tickets.sql           # tabla de hechos central
+│               ├── fact_tickets.sql           # central fact table
 │               │
 │               ├── ── MARTS (analytics) ──
-│               ├── fct_global_tickets.sql     # denorm lista para Streamlit
+│               ├── fct_global_tickets.sql     # denorm ready for Streamlit
 │               ├── mart_operations_sla.sql
 │               ├── mart_product_health.sql
 │               ├── mart_channel_efficiency.sql
@@ -168,15 +167,15 @@ Customer_Support_Ticket-AnalyticsDE2/
 │   └── full_data_pipeline.yaml
 │
 ├── streamlit/
-│   ├── app.py                            # Home / índice
+│   ├── app.py                            # Home / index
 │   ├── requirements.txt
 │   ├── utils/
-│   │   ├── db.py                         # conexión DuckDB con cache
-│   │   └── sidebar.py                    # status sidebar reutilizable
+│   │   ├── db.py                         # DuckDB connection with cache
+│   │   └── sidebar.py                    # reusable status sidebar
 │   └── pages/
 │       ├── 1_Product_Health.py
 │       ├── 2_Churn_Risk.py
-│       ├── 3_Explorer.py                 # SQL console interactiva
+│       ├── 3_Explorer.py                 # interactive SQL console
 │       ├── 4_Channel_Efficiency.py
 │       ├── 5_Ticket_Funnel.py
 │       ├── 6_General_Metrics.py
@@ -184,135 +183,132 @@ Customer_Support_Ticket-AnalyticsDE2/
 │       └── 7_Dataset_Benchmarking.py
 │
 ├── duckdb/
-│   └── support.duckdb                    # generado por pipeline (gitignored)
+│   └── support.duckdb                    # generated by pipeline (gitignored)
 │
 └── terraform/
     ├── main.tf
     ├── outputs.tf
     └── variables.tf
 ```
-
+ 
 ---
-
-## 🚀 Guía End-to-End (primera vez)
-
-### Pre-requisitos
-
-- Docker + Docker Compose instalado
+ 
+## 🚀 End-to-End Guide (first run)
+ 
+### Prerequisites
+ 
+- Docker + Docker Compose installed
 - Python 3.11+
-- Java 11 (JDK) en `./batch/jdk-11.0.2`
-- Spark 3.3.2 en `./batch/spark-3.3.2-bin-hadoop3`
-- Credenciales Kaggle (ver abajo)
-
-## ⚙️ Paso 0 — Setup de Spark y Java (solo entorno local)
-
-> ⚠️ Este paso es **solo necesario si ejecutás Spark fuera de Docker**.
-> Si usás `docker-compose`, podés saltearlo.
-
-### 1. Descargar dependencias
-
+- Java 11 (JDK) at `./batch/jdk-11.0.2`
+- Spark 3.3.2 at `./batch/spark-3.3.2-bin-hadoop3`
+- Kaggle credentials (see below)
+## ⚙️ Step 0 — Spark and Java Setup (local environment only)
+ 
+> ⚠️ This step is **only required if you run Spark outside of Docker**.
+> If you use `docker-compose`, you can skip it.
+ 
+### 1. Download dependencies
+ 
 ```bash
 wget https://archive.apache.org/dist/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz
 tar -xzvf spark-3.3.2-bin-hadoop3.tgz
-
+ 
 wget https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
 tar -xzvf openjdk-11.0.2_linux-x64_bin.tar.gz
 ```
-
-### 2. Configurar variables de entorno
-
+ 
+### 2. Set environment variables
+ 
 ```bash
 export JAVA_HOME=$(pwd)/jdk-11.0.2
 export PATH=$JAVA_HOME/bin:$PATH
-
+ 
 export SPARK_HOME=$(pwd)/spark-3.3.2-bin-hadoop3
 export PATH=$PATH:$SPARK_HOME/bin
 ```
-
-### 3. Verificación
-
+ 
+### 3. Verify
+ 
 ```bash
 java -version
 spark-submit --version
 ```
-
-Deberías ver:
-
+ 
+Expected output:
+ 
 * Java → `11.0.2`
 * Spark → `3.3.2`
-
-### Paso 1 — Credenciales Kaggle
-
+### Step 1 — Kaggle Credentials
+ 
 ```bash
-# Opción A — variables de entorno
-export KAGGLE_USERNAME=tu_usuario
-export KAGGLE_KEY=tu_api_key
-
-# Opción B — archivo
+# Option A — environment variables
+export KAGGLE_USERNAME=your_username
+export KAGGLE_KEY=your_api_key
+ 
+# Option B — file
 mkdir -p ~/.kaggle
-# Copiar kaggle.json descargado de kaggle.com/settings → API → Create New Token
+# Copy kaggle.json downloaded from kaggle.com/settings → API → Create New Token
 chmod 600 ~/.kaggle/kaggle.json
 ```
-
-### Paso 2 — Levantar servicios
-
+ 
+### Step 2 — Start services
+ 
 ```bash
 make up
-make status   # verifica que todos los contenedores estén corriendo
+make status   # verify all containers are running
 ```
-
-| Servicio   | URL                          | Credenciales              |
-|------------|------------------------------|---------------------------|
-| Streamlit  | http://localhost:8501         | —                         |
-| pgAdmin    | http://localhost:5050         | admin@support.io / support1234 |
-| Kestra     | http://localhost:18080        | admin@kestra.io / Admin1234   |
-| Jupyter    | http://localhost:8888         | token: `support`          |
-
-### Paso 3 — Descargar dataset
-
+ 
+| Service    | URL                          | Credentials                       |
+|------------|------------------------------|-----------------------------------|
+| Streamlit  | http://localhost:8501         | —                                 |
+| pgAdmin    | http://localhost:5050         | admin@support.io / support1234    |
+| Kestra     | http://localhost:18080        | admin@kestra.io / Admin1234       |
+| Jupyter    | http://localhost:8888         | token: `support`                  |
+ 
+### Step 3 — Download dataset
+ 
 ```bash
 python3 scripts/download_dataset.py
 ```
-
-### Paso 4 — Ejecutar pipeline completo
-
+ 
+### Step 4 — Run full pipeline
+ 
 ```bash
 make pipeline
 ```
-
-Esto ejecuta en orden:
-1. **`make ingest`** — Spark lee los CSV y escribe a PostgreSQL + DuckDB (tablas `*_raw`)
-2. **`dbt deps`** — instala `dbt_utils`
-3. **`dbt run`** — materializa Staging → Dimensiones → Fact → Marts
-4. **`dbt test`** — valida integridad (not_null, unique, accepted_values)
-
-### Paso 5 — Ver el dashboard
-
-Abrí http://localhost:8501 🎉
-
+ 
+This runs in order:
+1. **`make ingest`** — Spark reads the CSVs and writes to PostgreSQL + DuckDB (`*_raw` tables)
+2. **`dbt deps`** — installs `dbt_utils`
+3. **`dbt run`** — materializes Staging → Dimensions → Fact → Marts
+4. **`dbt test`** — validates integrity (not_null, unique, accepted_values)
+### Step 5 — View the dashboard
+ 
+Open http://localhost:8501 🎉
+ 
 ---
-
-## 🔄 Comandos útiles
-
+ 
+## 🔄 Useful Commands
+ 
 ```bash
-make status           # estado de contenedores + tablas en DuckDB
-make logs-streamlit   # logs en tiempo real del dashboard
-make logs-kestra      # logs del orquestador
-
-make dbt-run          # solo regenerar modelos dbt
-make dbt-test         # solo correr tests de calidad
-
-make shell-dbt        # bash dentro del contenedor dbt
-make shell-postgres   # psql directo a PostgreSQL
-
-make reset-db         # borra DuckDB y reinicia (datos se regeneran con make pipeline)
-make clean-all        # limpieza profunda (DuckDB + storage + volúmenes Docker)
+make status           # container status + DuckDB tables
+make logs-streamlit   # real-time dashboard logs
+make logs-kestra      # orchestrator logs
+ 
+make dbt-run          # regenerate dbt models only
+make dbt-test         # run quality tests only
+ 
+make shell-dbt        # bash inside the dbt container
+make shell-postgres   # direct psql to PostgreSQL
+ 
+make reset-db         # deletes DuckDB and restarts (data is regenerated with make pipeline)
+make clean-all        # deep clean (DuckDB + storage + Docker volumes)
 ```
-
+ 
 ---
-
-## 📊 Modelos dbt — Linaje
-
+ 
+## 📊 dbt Models — Lineage
+ 
 ```
 CSV raw
   └── tickets_200k_raw (DuckDB)
@@ -322,7 +318,7 @@ CSV raw
   stg_tickets_200k ──────┐
   stg_tickets_original ──┤
                          │
-                         ▼  DIMENSIONES
+                         ▼  DIMENSIONS
                     dim_date
                     dim_customer
                     dim_product
@@ -332,7 +328,7 @@ CSV raw
                     fact_tickets  (central)
                          │
                          ▼  MARTS
-                    fct_global_tickets  ──── Streamlit (todas las páginas)
+                    fct_global_tickets  ──── Streamlit (all pages)
                     mart_operations_sla
                     mart_product_health
                     mart_channel_efficiency
@@ -340,60 +336,76 @@ CSV raw
                     mart_ticket_funnel
                     mart_cx_satisfaction
 ```
-
+ 
 ---
-
-## 🧪 Tests de Calidad (dbt)
-
-| Modelo               | Test                          |
-|----------------------|-------------------------------|
-| `stg_tickets_200k`   | not_null, unique (ticket_id)  |
-| `stg_tickets_200k`   | accepted_values (priority, status) |
-| `dim_customer`       | not_null, unique (customer_sk, email) |
-| `fact_tickets`       | not_null, unique (ticket_sk)  |
+ 
+## 🧪 Quality Tests (dbt)
+ 
+| Model                | Test                                       |
+|----------------------|--------------------------------------------|
+| `stg_tickets_200k`   | not_null, unique (ticket_id)               |
+| `stg_tickets_200k`   | accepted_values (priority, status)         |
+| `dim_customer`       | not_null, unique (customer_sk, email)      |
+| `fact_tickets`       | not_null, unique (ticket_sk)               |
 | `fact_tickets`       | accepted_values (sla_status, satisfaction_band) |
-| `mart_product_health`| accepted_range health_score (0-100) |
-
+| `mart_product_health`| accepted_range health_score (0–100)        |
+ 
 ---
-
-## 🗃️ Columnas del Dataset 200k
-
-| Columna                     | Tipo    | Descripción                              |
-|-----------------------------|---------|------------------------------------------|
-| ticket_id                   | INT     | Identificador único del ticket           |
-| customer_email              | STRING  | Email (anonimizado con SHA-256 en Spark) |
-| product                     | STRING  | Producto afectado                        |
-| category                    | STRING  | Tipo de problema                         |
-| priority                    | STRING  | Low / Medium / High / Urgent / Critical  |
-| status                      | STRING  | Open / Closed / Pending / Resolved       |
-| channel                     | STRING  | Email / Chat / Phone / Social Media      |
-| region                      | STRING  | Norte / Sur América, etc.                |
-| resolution_time_hours       | DOUBLE  | Tiempo hasta resolución                  |
-| first_response_time_hours   | DOUBLE  | Tiempo hasta primera respuesta           |
-| customer_satisfaction_score | DOUBLE  | Score 1–5                                |
-| issue_complexity_score      | INT     | Complejidad 1–5                          |
-| sla_breached                | BOOLEAN | True si superó el umbral de SLA          |
-| escalated                   | BOOLEAN | True si fue escalado                     |
-| customer_tenure_months      | INT     | Meses como cliente                       |
-| customer_segment            | STRING  | Enterprise / SMB / Individual            |
-
+ 
+## 🗃️ Dataset 200k — Columns
+ 
+| Column                      | Type    | Description                                   |
+|-----------------------------|---------|-----------------------------------------------|
+| ticket_id                   | INT     | Unique ticket identifier                      |
+| customer_email              | STRING  | Email (anonymized with SHA-256 in Spark)      |
+| product                     | STRING  | Affected product                              |
+| category                    | STRING  | Problem type                                  |
+| priority                    | STRING  | Low / Medium / High / Urgent / Critical       |
+| status                      | STRING  | Open / Closed / Pending / Resolved            |
+| channel                     | STRING  | Email / Chat / Phone / Social Media           |
+| region                      | STRING  | North / South America, etc.                   |
+| resolution_time_hours       | DOUBLE  | Time to resolution                            |
+| first_response_time_hours   | DOUBLE  | Time to first response                        |
+| customer_satisfaction_score | DOUBLE  | Score 1–5                                     |
+| issue_complexity_score      | INT     | Complexity 1–5                                |
+| sla_breached                | BOOLEAN | True if SLA threshold was exceeded            |
+| escalated                   | BOOLEAN | True if ticket was escalated                  |
+| customer_tenure_months      | INT     | Months as a customer                          |
+| customer_segment            | STRING  | Enterprise / SMB / Individual                 |
+ 
 ---
-
+ 
 ## ☁️ Cloud — GCP + Terraform (Optional)
  
 ```bash
 cd terraform
 terraform init
-terraform apply -var="project_id=TU_PROJECT_ID"
-# Output: IP pública + URLs del stack desplegado
+terraform apply -var="project_id=YOUR_PROJECT_ID"
+# Output: Public IP + deployed stack URLs
 ```
  
-Recursos creados: Compute Engine VM (e2-standard-4) · GCS Bucket · Firewall (puertos 18080/8088/8888/8501) · Service Account con roles Storage Admin.
+Resources created: Compute Engine VM (e2-standard-4) · GCS Bucket · Firewall (ports 18080/8088/8888/8501) · Service Account with Storage Admin roles.
  
 ---
+ 
+## 📊 Streamlit Dashboard Previews
+ 
+All sections developed for the comprehensive analytics of this project:
 
-## Dashboards sugeridos en Streamlit.
-![alt text](<dashboard images/Screenshot 2026-04-04 124153.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 124349.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 124618.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125235.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125223.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125244.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125255.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125308.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125337.png>) ![alt text](<dashboard images/Screenshot 2026-04-04 125326.png>)![alt text](<dashboard images/channel eficency.png>)
+| | |
+|:---:|:---:|
+| **Product Health** <br><img src="./dashboard images/Screenshot 2026-04-20 211741.png" width="24000"/> | **Product Health — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 211806.png" width="24000"/> |
+| **Repeat Customers & Churn Risk** <br><img src="./dashboard images/Screenshot 2026-04-20 211850.png" width="24000"/> | **Channel Efficiency** <br><img src="./dashboard images/Screenshot 2026-04-20 212605.png" width="24000"/> |
+| **Channel Efficiency — Detail** <br><img src="./dashboard images/Screenshot 2026-04-20 212616.png" width="24000"/> | **Ticket Funnel** <br><img src="./dashboard images/Screenshot 2026-04-20 212632.png" width="1200"/> |
+| **General Metrics** <br><img src="./dashboard images/Screenshot 2026-04-20 212625.png" width="24000"/> | **General Metrics — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 212647.png" width="24000"/> |
+| **SLA & Response Performance** <br><img src="./dashboard images/Screenshot 2026-04-20 212657.png" width="24000"/> | **Dataset Benchmarking** <br><img src="./dashboard images/Screenshot 2026-04-20 212708.png" width="24000"/> |
+            *Capstone — Data Engineering Zoomcamp*
 
-
-*Capstone — Data Engineering Zoomcamp*
+| | |
+|:---:|:---:|
+| **Product Health** <br><img src="./dashboard images/Screenshot 2026-04-20 211741.png" width="24000"/> | **Product Health — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 211806.png" width="24000"/> |
+| **Repeat Customers & Churn Risk** <br><img src="./dashboard images/Screenshot 2026-04-20 211850.png" width="24000"/> | **Channel Efficiency** <br><img src="./dashboard images/Screenshot 2026-04-20 212605.png" width="24000"/> |
+| **Channel Efficiency — Detail** <br><img src="./dashboard images/Screenshot 2026-04-20 212616.png" width="24000"/> | **Ticket Funnel** <br><img src="./dashboard images/Screenshot 2026-04-20 212632.png" width="1200"/> |
+| **General Metrics** <br><img src="./dashboard images/Screenshot 2026-04-20 212625.png" width="24000"/> | **General Metrics — Full View** <br><img src="./dashboard images/Screenshot 2026-04-20 212647.png" width="24000"/> |
+| **SLA & Response Performance** <br><img src="./dashboard images/Screenshot 2026-04-20 212657.png" width="24000"/> | **Dataset Benchmarking** <br><img src="./dashboard images/Screenshot 2026-04-20 212708.png" width="24000"/> |
+                *Capstone — Data Engineering Zoomcamp*

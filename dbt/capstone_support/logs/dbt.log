@@ -115920,3 +115920,2871 @@ having count(*) > 1
 [0m23:46:20.020250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796f9d280a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796fa0d85210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796fa0d85590>]}
 [0m23:46:20.020875 [debug] [MainThread]: Flushing usage events
 [0m23:46:20.135058 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:14:46.027588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db5a3f850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db5ca9310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db8befdd0>]}
+
+
+============================== 00:14:46.050869 | 6c044889-b637-45b3-847b-14c55dbd9fe7 ==============================
+[0m00:14:46.050869 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:14:46.051977 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/usr/app/dbt/capstone_support/logs', 'warn_error': 'None', 'quiet': 'False', 'profiles_dir': '..', 'log_format': 'default', 'fail_fast': 'False', 'invocation_command': 'dbt deps --profiles-dir ..', 'write_json': 'True', 'empty': 'None', 'no_print': 'None', 'target_path': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'version_check': 'True', 'use_colors': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'static_parser': 'True'}
+[0m00:14:46.201239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6c044889-b637-45b3-847b-14c55dbd9fe7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db59441d0>]}
+[0m00:14:46.360335 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-03kvgwzb'
+[0m00:14:46.360942 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m00:14:46.515508 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m00:14:46.520111 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m00:14:46.706776 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m00:14:46.711722 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m00:14:46.828424 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m00:14:46.831091 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m00:14:47.001431 [info ] [MainThread]: Installed from version 1.3.3
+[0m00:14:47.002436 [info ] [MainThread]: Up to date!
+[0m00:14:47.003028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6c044889-b637-45b3-847b-14c55dbd9fe7', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db59e0150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db59245d0>]}
+[0m00:14:47.003807 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m00:14:47.102963 [info ] [MainThread]: Installed from version 0.14.0
+[0m00:14:47.104002 [info ] [MainThread]: Up to date!
+[0m00:14:47.104742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6c044889-b637-45b3-847b-14c55dbd9fe7', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db5a34510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db5992390>]}
+[0m00:14:47.108351 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.1797047, "process_in_blocks": "78760", "process_kernel_time": 0.489832, "process_mem_max_rss": "111400", "process_out_blocks": "6360", "process_user_time": 1.940411}
+[0m00:14:47.108886 [debug] [MainThread]: Command `dbt deps` succeeded at 00:14:47.108760 after 1.18 seconds
+[0m00:14:47.109309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768db5a35ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768dba645210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x768dba645590>]}
+[0m00:14:47.109661 [debug] [MainThread]: Flushing usage events
+[0m00:14:47.197819 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:14:49.911920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da54e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da55190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da55750>]}
+
+
+============================== 00:14:49.915193 | 93a7e1fd-1a76-4d30-b2a6-11993c1b22ab ==============================
+[0m00:14:49.915193 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:14:49.915907 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'quiet': 'False', 'static_parser': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --profiles-dir ..', 'partial_parse': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'version_check': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'target_path': 'None', 'profiles_dir': '..', 'empty': 'False', 'log_format': 'default', 'printer_width': '80', 'log_path': '/usr/app/dbt/capstone_support/logs'}
+[0m00:14:50.614727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da56ad0>]}
+[0m00:14:50.696193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794160c50890>]}
+[0m00:14:50.698582 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m00:14:50.850444 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m00:14:51.287825 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:14:51.289726 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m00:14:51.291339 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:14:51.469826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7941588f7e90>]}
+[0m00:14:51.764203 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/capstone_support/target/manifest.json
+[0m00:14:51.767903 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/capstone_support/target/semantic_manifest.json
+[0m00:14:51.787319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794158927cd0>]}
+[0m00:14:51.787896 [info ] [MainThread]: Found 17 models, 2 seeds, 9 data tests, 4 sources, 618 macros
+[0m00:14:51.788499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794158acc090>]}
+[0m00:14:51.792557 [info ] [MainThread]: 
+[0m00:14:51.793218 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m00:14:51.793850 [info ] [MainThread]: 
+[0m00:14:51.794616 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m00:14:51.804326 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k'
+[0m00:14:51.805103 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k'
+[0m00:14:51.889389 [debug] [ThreadPool]: Using duckdb connection "list_support_200k"
+[0m00:14:51.889824 [debug] [ThreadPool]: On list_support_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"support_200k"'
+    
+  
+  
+[0m00:14:51.890490 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:51.890251 [debug] [ThreadPool]: Using duckdb connection "list_support_200k"
+[0m00:14:51.891002 [debug] [ThreadPool]: On list_support_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"support_200k"'
+    
+  
+  
+[0m00:14:51.891342 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:52.444105 [debug] [ThreadPool]: SQL status: OK in 0.553 seconds
+[0m00:14:52.444592 [debug] [ThreadPool]: SQL status: OK in 0.554 seconds
+[0m00:14:52.445793 [debug] [ThreadPool]: On list_support_200k: Close
+[0m00:14:52.446973 [debug] [ThreadPool]: On list_support_200k: Close
+[0m00:14:52.447868 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_support_200k, now create_support_200k_main_marts)
+[0m00:14:52.448247 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_support_200k, now create_support_200k_main)
+[0m00:14:52.448703 [debug] [ThreadPool]: Creating schema "database: "support_200k"
+schema: "main_marts"
+"
+[0m00:14:52.449181 [debug] [ThreadPool]: Creating schema "database: "support_200k"
+schema: "main"
+"
+[0m00:14:52.455889 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main_marts"
+[0m00:14:52.457819 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main"
+[0m00:14:52.458272 [debug] [ThreadPool]: On create_support_200k_main_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "create_support_200k_main_marts"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='support_200k'
+        and type='sqlite'
+    
+  
+[0m00:14:52.458686 [debug] [ThreadPool]: On create_support_200k_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "create_support_200k_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='support_200k'
+        and type='sqlite'
+    
+  
+[0m00:14:52.459028 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:52.459337 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:52.460755 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m00:14:52.462340 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main"
+[0m00:14:52.462723 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m00:14:52.463233 [debug] [ThreadPool]: On create_support_200k_main: BEGIN
+[0m00:14:52.464359 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main_marts"
+[0m00:14:52.464852 [debug] [ThreadPool]: On create_support_200k_main_marts: BEGIN
+[0m00:14:52.465226 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m00:14:52.465687 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main"
+[0m00:14:52.466045 [debug] [ThreadPool]: On create_support_200k_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "create_support_200k_main"} */
+
+    
+    
+        create schema if not exists "support_200k"."main"
+    
+[0m00:14:52.466647 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:14:52.467581 [debug] [ThreadPool]: On create_support_200k_main: COMMIT
+[0m00:14:52.467934 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main"
+[0m00:14:52.468414 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m00:14:52.469160 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main_marts"
+[0m00:14:52.469503 [debug] [ThreadPool]: On create_support_200k_main_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "create_support_200k_main_marts"} */
+
+    
+    
+        create schema if not exists "support_200k"."main_marts"
+    
+[0m00:14:52.470126 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:14:52.468779 [debug] [ThreadPool]: On create_support_200k_main: COMMIT
+[0m00:14:52.471659 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:14:52.471084 [debug] [ThreadPool]: On create_support_200k_main_marts: COMMIT
+[0m00:14:52.472418 [debug] [ThreadPool]: Using duckdb connection "create_support_200k_main_marts"
+[0m00:14:52.472045 [debug] [ThreadPool]: On create_support_200k_main: Close
+[0m00:14:52.472757 [debug] [ThreadPool]: On create_support_200k_main_marts: COMMIT
+[0m00:14:52.473742 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m00:14:52.474149 [debug] [ThreadPool]: On create_support_200k_main_marts: Close
+[0m00:14:52.476988 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_support_200k_main_marts, now list_support_200k_main_marts)
+[0m00:14:52.477562 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_support_200k_main, now list_support_200k_main_main)
+[0m00:14:52.478127 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k_main'
+[0m00:14:52.488558 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_main"
+[0m00:14:52.489673 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_marts"
+[0m00:14:52.491517 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main"
+[0m00:14:52.492546 [debug] [ThreadPool]: On list_support_200k_main: BEGIN
+[0m00:14:52.493509 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:14:52.491867 [debug] [ThreadPool]: On list_support_200k_main_main: BEGIN
+[0m00:14:52.492232 [debug] [ThreadPool]: On list_support_200k_main_marts: BEGIN
+[0m00:14:52.494276 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:52.494656 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:14:52.495156 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m00:14:52.495897 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m00:14:52.496237 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m00:14:52.496552 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main"
+[0m00:14:52.496885 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_main"
+[0m00:14:52.497234 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_marts"
+[0m00:14:52.497596 [debug] [ThreadPool]: On list_support_200k_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:14:52.497948 [debug] [ThreadPool]: On list_support_200k_main_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main_main"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_main'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:14:52.498350 [debug] [ThreadPool]: On list_support_200k_main_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main_marts"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:14:52.505456 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m00:14:52.507731 [debug] [ThreadPool]: On list_support_200k_main_main: ROLLBACK
+[0m00:14:52.508139 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m00:14:52.508618 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m00:14:52.510305 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main_main'
+[0m00:14:52.514661 [debug] [ThreadPool]: On list_support_200k_main_main: Close
+[0m00:14:52.514193 [debug] [ThreadPool]: On list_support_200k_main_marts: ROLLBACK
+[0m00:14:52.512280 [debug] [ThreadPool]: On list_support_200k_main: ROLLBACK
+[0m00:14:52.515617 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main'
+[0m00:14:52.515936 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main_marts'
+[0m00:14:52.516278 [debug] [ThreadPool]: On list_support_200k_main: Close
+[0m00:14:52.516718 [debug] [ThreadPool]: On list_support_200k_main_marts: Close
+[0m00:14:52.522354 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da55510>]}
+[0m00:14:52.522940 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:14:52.523327 [debug] [MainThread]: On master: BEGIN
+[0m00:14:52.523705 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:14:52.524292 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m00:14:52.524584 [debug] [MainThread]: On master: COMMIT
+[0m00:14:52.524869 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:14:52.525167 [debug] [MainThread]: On master: COMMIT
+[0m00:14:52.525602 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:14:52.525894 [debug] [MainThread]: On master: Close
+[0m00:14:52.533846 [debug] [Thread-1 (]: Began running node model.customer_support_tickets.dim_date
+[0m00:14:52.534665 [debug] [Thread-2 (]: Began running node model.customer_support_tickets.mart_customer_risk_v2
+[0m00:14:52.534359 [info ] [Thread-1 (]: 1 of 17 START sql table model main.dim_date .................................... [RUN]
+[0m00:14:52.535328 [debug] [Thread-3 (]: Began running node model.customer_support_tickets.stg_tickets_200k
+[0m00:14:52.535759 [info ] [Thread-2 (]: 2 of 17 START sql table model main_marts.mart_customer_risk_v2 ................. [RUN]
+[0m00:14:52.536429 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.stg_tickets_original
+[0m00:14:52.536797 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_support_200k_main_marts, now model.customer_support_tickets.dim_date)
+[0m00:14:52.537293 [info ] [Thread-3 (]: 3 of 17 START sql view model main.stg_tickets_200k ............................. [RUN]
+[0m00:14:52.537925 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_support_200k_main, now model.customer_support_tickets.mart_customer_risk_v2)
+[0m00:14:52.538525 [info ] [Thread-4 (]: 4 of 17 START sql view model main.stg_tickets_original ......................... [RUN]
+[0m00:14:52.539181 [debug] [Thread-1 (]: Began compiling node model.customer_support_tickets.dim_date
+[0m00:14:52.539672 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_support_200k_main_main, now model.customer_support_tickets.stg_tickets_200k)
+[0m00:14:52.540141 [debug] [Thread-2 (]: Began compiling node model.customer_support_tickets.mart_customer_risk_v2
+[0m00:14:52.540736 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.customer_support_tickets.stg_tickets_original'
+[0m00:14:52.556933 [debug] [Thread-3 (]: Began compiling node model.customer_support_tickets.stg_tickets_200k
+[0m00:14:52.561181 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.574290 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.stg_tickets_original
+[0m00:14:52.578325 [debug] [Thread-2 (]: Writing injected SQL for node "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:52.588711 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.601480 [debug] [Thread-3 (]: Began executing node model.customer_support_tickets.stg_tickets_200k
+[0m00:14:52.589327 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: BEGIN
+[0m00:14:52.600355 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.607582 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:52.618780 [debug] [Thread-2 (]: Began executing node model.customer_support_tickets.mart_customer_risk_v2
+[0m00:14:52.619119 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.stg_tickets_original
+[0m00:14:52.638159 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.643730 [debug] [Thread-1 (]: SQL status: OK in 0.036 seconds
+[0m00:14:52.655664 [debug] [Thread-2 (]: Writing runtime sql for node "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:52.658659 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.659246 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.659766 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.660616 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.661106 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+
+
+        select 
+        (date_diff('day', cast('2020-01-01' as date)::timestamp, cast('2026-12-31' as date)::timestamp ))
+    
+[0m00:14:52.661436 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:52.661818 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: BEGIN
+[0m00:14:52.662194 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: BEGIN
+[0m00:14:52.663721 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:14:52.662874 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: BEGIN
+[0m00:14:52.664417 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m00:14:52.665272 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m00:14:52.666619 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m00:14:52.668183 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.667374 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m00:14:52.669278 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m00:14:52.667730 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m00:14:52.670345 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.670805 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_200k"} */
+
+  
+  create view "support_200k"."main"."stg_tickets_200k__dbt_tmp" as (
+    
+
+with raw_source as (
+    select * from "support_200k"."main"."customer_support_tickets_200k"
+)
+
+select
+    -- Identificadores y Cliente
+    ticket_id::varchar as ticket_id,
+    customer_name,
+    customer_email,
+    customer_age,
+    customer_gender,
+    customer_segment,
+    customer_tenure_months,
+    
+    -- Producto y Ticket
+    lower(trim(product)) as product,
+    category,
+    issue_description,
+    resolution_notes,
+    priority,
+    status,
+    channel,
+    region,
+    
+    -- Métricas y Rendimiento
+    previous_tickets,
+    customer_satisfaction_score,
+    first_response_time_hours,
+    resolution_time_hours,
+    issue_complexity_score,
+    
+    -- Fechas y Logs
+    ticket_created_date,
+    ticket_resolved_date,
+    escalated,
+    sla_breached,
+    
+    -- Otros Atributos
+    subscription_type,
+    operating_system,
+    browser,
+    payment_method,
+    language,
+    preferred_contact_time,
+
+    -- Metadatos
+    '200k' as dataset_source,
+    current_timestamp as _ingested_at
+from raw_source
+  );
+
+[0m00:14:52.668703 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_original"} */
+
+  
+  create view "support_200k"."main"."stg_tickets_original__dbt_tmp" as (
+    SELECT 
+    ticket_id,
+    customer_name,
+    category,
+    priority,
+    status,
+    resolution_time_hours,
+    'original' as dataset_source
+FROM "support_200k"."main"."customer_support_tickets_200k"
+  );
+
+[0m00:14:52.669875 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:52.685034 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main_marts"."mart_customer_risk_v2__dbt_tmp"
+  
+    as (
+      
+
+/*
+  mart_customer_risk_v2.sql
+  ─────────────────────────
+  Segmentación de riesgo por cliente basada en:
+    · Tasa de SLA breach        (peso 40 %)
+    · Tasa de escalamiento      (peso 30 %)
+    · CSAT promedio invertido   (peso 30 %)
+
+  Fuente: support_200k.duckdb → main.customer_support_tickets_200k
+  Referencia staging: stg_tickets_200k_v2
+*/
+
+with customer_metrics as (
+    select
+        customer_email,
+        customer_name,
+        customer_segment,
+        subscription_type,
+        region,
+
+        count(*)                                                        as total_tickets,
+
+        -- SLA breach rate (0 → 1)
+        round(
+            1.0 * sum(case when lower(trim(sla_breached)) = 'yes' then 1 else 0 end)
+            / nullif(count(*), 0), 4
+        )                                                               as sla_breach_rate,
+
+        -- Escalation rate (0 → 1)
+        round(
+            1.0 * sum(case when lower(trim(escalated)) = 'yes' then 1 else 0 end)
+            / nullif(count(*), 0), 4
+        )                                                               as escalation_rate,
+
+        -- CSAT promedio (1–5; lo invertimos para que 1=peor → mayor riesgo)
+        round(avg(customer_satisfaction_score::double), 4)              as avg_csat,
+
+        round(avg(resolution_time_hours), 2)                           as avg_resolution_hours,
+        max(ticket_created_date)                                        as last_ticket_date,
+        count(case when lower(trim(status)) in ('open','in progress') then 1 end)
+                                                                        as open_tickets
+
+    from "support_200k"."main"."customer_support_tickets_200k"
+    where customer_email is not null
+    group by 1, 2, 3, 4, 5
+    having count(*) >= 1
+),
+
+scored as (
+    select
+        *,
+
+        -- Score de riesgo 0–100
+        -- SLA breach (40 pts) + escalation (30 pts) + CSAT invertido (30 pts)
+        round(
+            (sla_breach_rate * 40)
+            + (escalation_rate * 30)
+            + ((1 - (avg_csat - 1) / 4.0) * 30),   -- normaliza 1–5 → 0–1, invertido
+        2)                                                              as risk_score
+
+    from customer_metrics
+),
+
+classified as (
+    select
+        *,
+        case
+            when risk_score >= 75 then 'Critical'
+            when risk_score >= 55 then 'High'
+            when risk_score >= 35 then 'Medium'
+            else                       'Low'
+        end                                                             as risk_tier,
+
+        -- Ranking dentro de su segmento
+        rank() over (
+            partition by customer_segment
+            order by risk_score desc
+        )                                                               as risk_rank_in_segment
+
+    from scored
+)
+
+select
+    md5(cast(coalesce(cast(customer_email as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT))          as customer_sk,
+    customer_email,
+    customer_name,
+    customer_segment,
+    subscription_type,
+    region,
+    total_tickets,
+    open_tickets,
+    sla_breach_rate,
+    escalation_rate,
+    avg_csat,
+    avg_resolution_hours,
+    last_ticket_date,
+    risk_score,
+    risk_tier,
+    risk_rank_in_segment
+from classified
+order by risk_score desc
+    );
+  
+  
+[0m00:14:52.694393 [debug] [Thread-1 (]: Writing injected SQL for node "model.customer_support_tickets.dim_date"
+[0m00:14:52.695124 [debug] [Thread-4 (]: SQL status: OK in 0.017 seconds
+[0m00:14:52.700903 [debug] [Thread-3 (]: SQL status: OK in 0.030 seconds
+[0m00:14:52.716133 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.712968 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.716858 [debug] [Thread-1 (]: Began executing node model.customer_support_tickets.dim_date
+[0m00:14:52.717940 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_original"} */
+alter view "support_200k"."main"."stg_tickets_original" rename to "stg_tickets_original__dbt_backup"
+[0m00:14:52.717424 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_200k"} */
+alter view "support_200k"."main"."stg_tickets_200k" rename to "stg_tickets_200k__dbt_backup"
+[0m00:14:52.724783 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:52.723916 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:52.722901 [debug] [Thread-1 (]: Writing runtime sql for node "model.customer_support_tickets.dim_date"
+[0m00:14:52.733325 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.728768 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.734086 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.734532 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_original"} */
+alter view "support_200k"."main"."stg_tickets_original__dbt_tmp" rename to "stg_tickets_original"
+[0m00:14:52.734987 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_200k"} */
+alter view "support_200k"."main"."stg_tickets_200k__dbt_tmp" rename to "stg_tickets_200k"
+[0m00:14:52.735555 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."dim_date__dbt_tmp"
+  
+    as (
+      
+
+with date_spine as (
+    
+
+
+
+
+
+with rawdata as (
+
+    
+
+    
+
+    with p as (
+        select 0 as generated_number union all select 1
+    ), unioned as (
+
+    select
+
+    
+    p0.generated_number * power(2, 0)
+     + 
+    
+    p1.generated_number * power(2, 1)
+     + 
+    
+    p2.generated_number * power(2, 2)
+     + 
+    
+    p3.generated_number * power(2, 3)
+     + 
+    
+    p4.generated_number * power(2, 4)
+     + 
+    
+    p5.generated_number * power(2, 5)
+     + 
+    
+    p6.generated_number * power(2, 6)
+     + 
+    
+    p7.generated_number * power(2, 7)
+     + 
+    
+    p8.generated_number * power(2, 8)
+     + 
+    
+    p9.generated_number * power(2, 9)
+     + 
+    
+    p10.generated_number * power(2, 10)
+     + 
+    
+    p11.generated_number * power(2, 11)
+    
+    
+    + 1
+    as generated_number
+
+    from
+
+    
+    p as p0
+     cross join 
+    
+    p as p1
+     cross join 
+    
+    p as p2
+     cross join 
+    
+    p as p3
+     cross join 
+    
+    p as p4
+     cross join 
+    
+    p as p5
+     cross join 
+    
+    p as p6
+     cross join 
+    
+    p as p7
+     cross join 
+    
+    p as p8
+     cross join 
+    
+    p as p9
+     cross join 
+    
+    p as p10
+     cross join 
+    
+    p as p11
+    
+    
+
+    )
+
+    select *
+    from unioned
+    where generated_number <= 2556
+    order by generated_number
+
+
+
+),
+
+all_periods as (
+
+    select (
+        
+
+    (cast('2020-01-01' as date) + cast(row_number() over (order by generated_number) - 1 as bigint) * interval 1 day)
+    ) as date_day
+    from rawdata
+
+),
+
+filtered as (
+
+    select *
+    from all_periods
+    where date_day <= cast('2026-12-31' as date)
+
+)
+
+select * from filtered
+
+
+)
+
+select
+    date_day as date_actual,
+    date_day as date_id,
+    extract(year from date_day) as year,
+    extract(month from date_day) as month,
+    extract(day from date_day) as day,
+    extract(dow from date_day) in (0, 6) as is_weekend
+from date_spine
+    );
+  
+  
+[0m00:14:52.736721 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:52.737184 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:52.770674 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: COMMIT
+[0m00:14:52.771357 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: COMMIT
+[0m00:14:52.772362 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.772786 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: COMMIT
+[0m00:14:52.771873 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.773478 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: COMMIT
+[0m00:14:52.809819 [debug] [Thread-4 (]: SQL status: OK in 0.036 seconds
+[0m00:14:52.835141 [debug] [Thread-3 (]: SQL status: OK in 0.062 seconds
+[0m00:14:52.841651 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_original"
+[0m00:14:52.842183 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_original"} */
+
+      drop view if exists "support_200k"."main"."stg_tickets_original__dbt_backup" cascade
+    
+[0m00:14:52.845486 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets_200k"
+[0m00:14:52.846856 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets_200k"} */
+
+      drop view if exists "support_200k"."main"."stg_tickets_200k__dbt_backup" cascade
+    
+[0m00:14:52.860158 [debug] [Thread-4 (]: SQL status: OK in 0.014 seconds
+[0m00:14:52.862025 [debug] [Thread-3 (]: SQL status: OK in 0.015 seconds
+[0m00:14:52.870212 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets_200k: Close
+[0m00:14:52.866347 [debug] [Thread-4 (]: On model.customer_support_tickets.stg_tickets_original: Close
+[0m00:14:52.887586 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794154140f50>]}
+[0m00:14:52.893095 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7941540e3710>]}
+[0m00:14:52.888917 [info ] [Thread-3 (]: 3 of 17 OK created sql view model main.stg_tickets_200k ........................ [[32mOK[0m in 0.33s]
+[0m00:14:52.897369 [debug] [Thread-3 (]: Finished running node model.customer_support_tickets.stg_tickets_200k
+[0m00:14:52.895173 [info ] [Thread-4 (]: 4 of 17 OK created sql view model main.stg_tickets_original .................... [[32mOK[0m in 0.33s]
+[0m00:14:52.901515 [debug] [Thread-3 (]: Began running node model.customer_support_tickets.stg_users
+[0m00:14:52.902870 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.stg_tickets_original
+[0m00:14:52.903765 [info ] [Thread-3 (]: 5 of 17 START sql view model main.stg_users .................................... [RUN]
+[0m00:14:52.905505 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.base_fact_tickets
+[0m00:14:52.907037 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.stg_tickets_200k, now model.customer_support_tickets.stg_users)
+[0m00:14:52.908985 [debug] [Thread-3 (]: Began compiling node model.customer_support_tickets.stg_users
+[0m00:14:52.907872 [info ] [Thread-4 (]: 6 of 17 START sql table model main.base_fact_tickets ........................... [RUN]
+[0m00:14:52.916862 [debug] [Thread-1 (]: SQL status: OK in 0.179 seconds
+[0m00:14:52.919373 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.stg_tickets_original, now model.customer_support_tickets.base_fact_tickets)
+[0m00:14:52.918389 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_support_tickets.stg_users"
+[0m00:14:52.930688 [debug] [Thread-3 (]: Began executing node model.customer_support_tickets.stg_users
+[0m00:14:52.929187 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.base_fact_tickets
+[0m00:14:52.937792 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.945250 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dim_date'
+  
+[0m00:14:52.946714 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:14:52.936744 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_support_tickets.stg_users"
+[0m00:14:52.947938 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:52.949301 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: BEGIN
+[0m00:14:52.944607 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:52.950658 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.base_fact_tickets
+[0m00:14:52.949776 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:14:52.959930 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m00:14:52.952139 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.961081 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'dim_date'
+  
+[0m00:14:52.958239 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:52.962198 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:52.960568 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:52.965898 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_users"} */
+
+  
+  create view "support_200k"."main"."stg_users__dbt_tmp" as (
+    
+
+with source as (
+    select * from "support_200k"."main"."customer_support_tickets_200k"
+)
+
+select
+    distinct
+    -- Cambiado a minúsculas y sin comillas innecesarias si el motor ya las reconoce así
+    md5(cast(coalesce(cast(customer_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(customer_email as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as user_id,
+    customer_name as name,
+    customer_email as email
+from source -- Usá la CTE 'source' que definiste arriba en lugar de llamar al source de nuevo
+  );
+
+[0m00:14:52.965318 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: BEGIN
+[0m00:14:52.966639 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:14:52.964413 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m00:14:52.973049 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:52.975666 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+alter table "support_200k"."main"."dim_date" rename to "dim_date__dbt_backup"
+[0m00:14:52.975111 [debug] [Thread-3 (]: SQL status: OK in 0.009 seconds
+[0m00:14:52.973720 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m00:14:52.983606 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:52.984441 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."base_fact_tickets__dbt_tmp"
+  
+    as (
+      
+
+-- CTE 1: Importación de datos crudos (Referenciando las columnas reales)
+WITH staging_data AS (
+    SELECT * FROM "support_200k"."main"."stg_tickets_200k"
+),
+
+-- CTE 2: Limpieza, Casteo y Manejo de Nulos
+cleaned_data AS (
+    SELECT
+        COALESCE(CAST(ticket_id AS VARCHAR), 'N/A')       AS ticket_id,
+        CAST(customer_name AS VARCHAR)                    AS customer_name,
+        LOWER(TRIM(CAST(customer_email AS VARCHAR)))      AS customer_email,
+        LOWER(TRIM(CAST(product AS VARCHAR)))             AS product,
+        LOWER(TRIM(CAST(category AS VARCHAR)))            AS category,
+        CAST(issue_description AS VARCHAR)                AS issue_description,
+        CAST(resolution_notes AS VARCHAR)                 AS resolution_notes,
+        LOWER(TRIM(CAST(priority AS VARCHAR)))            AS priority,
+        LOWER(TRIM(CAST(status AS VARCHAR)))              AS status,
+        LOWER(TRIM(CAST(channel AS VARCHAR)))             AS channel,
+        CAST(region AS VARCHAR)                           AS region,
+        COALESCE(CAST(customer_age AS INTEGER), 0)        AS customer_age,
+        CAST(customer_gender AS VARCHAR)                  AS customer_gender,
+        CAST(subscription_type AS VARCHAR)                AS subscription_type,
+        CAST(customer_tenure_months AS INTEGER)           AS customer_tenure_months,
+        CAST(previous_tickets AS INTEGER)                 AS previous_tickets,
+        COALESCE(CAST(customer_satisfaction_score AS INTEGER), 0) AS customer_satisfaction_score,
+        COALESCE(CAST(first_response_time_hours AS DOUBLE), 0.0)  AS first_response_time_hours,
+        COALESCE(CAST(resolution_time_hours AS DOUBLE), 0.0)      AS resolution_time_hours,
+        CAST(ticket_created_date AS TIMESTAMP)            AS ticket_created_date,
+        CAST(ticket_resolved_date AS TIMESTAMP)           AS ticket_resolved_date,
+        CAST(escalated AS BOOLEAN)                        AS escalated,
+        CAST(sla_breached AS BOOLEAN)                     AS sla_breached,
+        CAST(operating_system AS VARCHAR)                 AS operating_system,
+        CAST(browser AS VARCHAR)                          AS browser,
+        CAST(payment_method AS VARCHAR)                   AS payment_method,
+        CAST(language AS VARCHAR)                         AS language,
+        CAST(preferred_contact_time AS VARCHAR)           AS preferred_contact_time,
+        CAST(issue_complexity_score AS INTEGER)           AS issue_complexity_score,
+        CAST(customer_segment AS VARCHAR)                 AS customer_segment
+    FROM staging_data
+),
+
+-- CTE 3: Lógica de Negocio y Metadatos
+business_logic AS (
+    SELECT
+        c.*,
+        -- Banderas de cumplimiento automáticas basadas en las horas confirmadas
+        CASE WHEN c.first_response_time_hours <= 24 THEN 1 ELSE 0 END AS is_within_sla_first_response,
+        CASE WHEN c.resolution_time_hours <= 72 THEN 1 ELSE 0 END     AS is_within_sla_resolution,
+        
+        -- Segmentación de edad
+        CASE 
+            WHEN c.customer_age < 25 THEN 'Gen Z'
+            WHEN c.customer_age BETWEEN 25 AND 40 THEN 'Millennial'
+            WHEN c.customer_age > 40 THEN 'Gen X/Boomer'
+            ELSE 'Unknown'
+        END AS age_segment,
+
+        -- Metadatos
+        '200k'                                            AS dataset_source,
+        CURRENT_TIMESTAMP                                 AS _ingested_at
+    FROM cleaned_data c
+),
+
+-- CTE 4: Deduplicación por ticket_id
+final_deduplicated AS (
+    SELECT 
+        b.*,
+        ROW_NUMBER() OVER (PARTITION BY b.ticket_id ORDER BY b.ticket_created_date DESC) AS row_num
+    FROM business_logic b
+)
+
+-- Selección Final (Columnas confirmadas + pre-cálculos)
+SELECT
+    ticket_id,
+    customer_name,
+    customer_email,
+    product,
+    category,
+    issue_description,
+    resolution_notes,
+    priority,
+    status,
+    channel,
+    region,
+    customer_age,
+    age_segment,
+    customer_gender,
+    subscription_type,
+    customer_tenure_months,
+    previous_tickets,
+    customer_satisfaction_score,
+    first_response_time_hours,
+    is_within_sla_first_response,
+    resolution_time_hours,
+    is_within_sla_resolution,
+    ticket_created_date,
+    ticket_resolved_date,
+    escalated,
+    sla_breached,
+    operating_system,
+    browser,
+    payment_method,
+    language,
+    preferred_contact_time,
+    issue_complexity_score,
+    customer_segment,
+    dataset_source,
+    _ingested_at
+FROM final_deduplicated
+WHERE row_num = 1
+    );
+  
+  
+[0m00:14:52.982680 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m00:14:52.986951 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:52.996449 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_users"} */
+alter view "support_200k"."main"."stg_users" rename to "stg_users__dbt_backup"
+[0m00:14:52.997324 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:52.997718 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:53.003768 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+alter table "support_200k"."main"."dim_date__dbt_tmp" rename to "dim_date"
+[0m00:14:53.004537 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:14:53.003261 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:53.017478 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_users"} */
+alter view "support_200k"."main"."stg_users__dbt_tmp" rename to "stg_users"
+[0m00:14:53.018553 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:53.025339 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: COMMIT
+[0m00:14:53.031607 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:53.032119 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: COMMIT
+[0m00:14:53.028986 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: COMMIT
+[0m00:14:53.034926 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:53.035479 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: COMMIT
+[0m00:14:53.045042 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m00:14:53.054702 [debug] [Thread-3 (]: SQL status: OK in 0.019 seconds
+[0m00:14:53.061294 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_users"
+[0m00:14:53.053130 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.dim_date"
+[0m00:14:53.063428 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.dim_date"} */
+
+      drop table if exists "support_200k"."main"."dim_date__dbt_backup" cascade
+    
+[0m00:14:53.061963 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_users"} */
+
+      drop view if exists "support_200k"."main"."stg_users__dbt_backup" cascade
+    
+[0m00:14:53.066245 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m00:14:53.070521 [debug] [Thread-1 (]: On model.customer_support_tickets.dim_date: Close
+[0m00:14:53.068159 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m00:14:53.076169 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_users: Close
+[0m00:14:53.078386 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7941541bbf10>]}
+[0m00:14:53.074602 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415884f110>]}
+[0m00:14:53.082413 [info ] [Thread-1 (]: 1 of 17 OK created sql table model main.dim_date ............................... [[32mOK[0m in 0.54s]
+[0m00:14:53.079222 [info ] [Thread-3 (]: 5 of 17 OK created sql view model main.stg_users ............................... [[32mOK[0m in 0.17s]
+[0m00:14:53.083649 [debug] [Thread-1 (]: Finished running node model.customer_support_tickets.dim_date
+[0m00:14:53.084636 [debug] [Thread-3 (]: Finished running node model.customer_support_tickets.stg_users
+[0m00:14:53.087137 [debug] [Thread-1 (]: Began running node model.customer_support_tickets.stg_all_tickets
+[0m00:14:53.087931 [debug] [Thread-3 (]: Began running node model.customer_support_tickets.stg_tickets
+[0m00:14:53.089396 [info ] [Thread-1 (]: 7 of 17 START sql view model main.stg_all_tickets .............................. [RUN]
+[0m00:14:53.092888 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.dim_date, now model.customer_support_tickets.stg_all_tickets)
+[0m00:14:53.093473 [debug] [Thread-1 (]: Began compiling node model.customer_support_tickets.stg_all_tickets
+[0m00:14:53.090454 [info ] [Thread-3 (]: 8 of 17 START sql table model main.stg_tickets ................................. [RUN]
+[0m00:14:53.108673 [debug] [Thread-1 (]: Writing injected SQL for node "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.109386 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.stg_users, now model.customer_support_tickets.stg_tickets)
+[0m00:14:53.112610 [debug] [Thread-1 (]: Began executing node model.customer_support_tickets.stg_all_tickets
+[0m00:14:53.113070 [debug] [Thread-3 (]: Began compiling node model.customer_support_tickets.stg_tickets
+[0m00:14:53.123563 [debug] [Thread-1 (]: Writing runtime sql for node "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.133815 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_support_tickets.stg_tickets"
+[0m00:14:53.134419 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.136444 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: BEGIN
+[0m00:14:53.136899 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:53.137785 [debug] [Thread-3 (]: Began executing node model.customer_support_tickets.stg_tickets
+[0m00:14:53.148392 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m00:14:53.148842 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.151343 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_all_tickets"} */
+
+  
+  create view "support_200k"."main"."stg_all_tickets__dbt_tmp" as (
+    
+
+-- Eliminamos el UNION ALL y apuntamos solo al que funciona
+select 
+    ticket_id,
+    customer_email,
+    '200k' as dataset_source
+from "support_200k"."main"."stg_tickets_200k"
+  );
+
+[0m00:14:53.158597 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_support_tickets.stg_tickets"
+[0m00:14:53.160534 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:53.163062 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: BEGIN
+[0m00:14:53.163533 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:14:53.164616 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:53.166872 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:53.168271 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."stg_tickets__dbt_tmp"
+  
+    as (
+      
+
+-- CTE 1: Traemos los datos crudos con los nombres confirmados
+with raw_source as (
+    select
+        ticket_id,
+        customer_name,
+        customer_email,
+        product,
+        category,
+        issue_description,
+        resolution_notes,
+        priority,
+        status,
+        channel,
+        region,
+        customer_age,
+        customer_gender,
+        subscription_type,
+        customer_tenure_months,
+        previous_tickets,
+        customer_satisfaction_score,
+        first_response_time_hours,
+        resolution_time_hours,
+        ticket_created_date,
+        ticket_resolved_date,
+        escalated,
+        sla_breached,
+        operating_system,
+        browser,
+        payment_method,
+        language,
+        preferred_contact_time,
+        issue_complexity_score,
+        customer_segment
+    from "support_200k"."main"."stg_tickets_200k"
+),
+
+-- CTE 2: Aplicamos CAST, COALESCE y limpieza
+final_formatted as (
+    select
+        -- Identificadores y Cliente
+        cast(ticket_id as varchar) as ticket_id,
+        cast(customer_name as varchar) as customer_name,
+        lower(trim(cast(customer_email as varchar))) as customer_email,
+        
+        -- Producto y Categorización
+        lower(trim(cast(product as varchar))) as product,
+        lower(trim(cast(category as varchar))) as category,
+        cast(issue_description as varchar) as issue_description,
+        cast(resolution_notes as varchar) as resolution_notes,
+        
+        -- Estado y Prioridad
+        lower(trim(cast(priority as varchar))) as priority,
+        lower(trim(cast(status as varchar))) as status,
+        lower(trim(cast(channel as varchar))) as channel,
+        cast(region as varchar) as region,
+        
+        -- Demografía y Perfil
+        coalesce(cast(customer_age as integer), 0) as customer_age,
+        cast(customer_gender as varchar) as customer_gender,
+        cast(subscription_type as varchar) as subscription_type,
+        cast(customer_tenure_months as integer) as customer_tenure_months,
+        cast(customer_segment as varchar) as customer_segment,
+        
+        -- Métricas de Performance
+        cast(previous_tickets as integer) as previous_tickets,
+        coalesce(cast(customer_satisfaction_score as integer), 0) as customer_satisfaction_score,
+        coalesce(cast(first_response_time_hours as double), 0.0) as first_response_time_hours,
+        coalesce(cast(resolution_time_hours as double), 0.0) as resolution_time_hours,
+        cast(issue_complexity_score as integer) as issue_complexity_score,
+        
+        -- Fechas y Flags
+        cast(ticket_created_date as timestamp) as ticket_created_date,
+        cast(ticket_resolved_date as timestamp) as ticket_resolved_date,
+        cast(escalated as boolean) as escalated,
+        cast(sla_breached as boolean) as sla_breached,
+        
+        -- Datos Técnicos y Preferencias
+        cast(operating_system as varchar) as operating_system,
+        cast(browser as varchar) as browser,
+        cast(payment_method as varchar) as payment_method,
+        cast(language as varchar) as language,
+        cast(preferred_contact_time as varchar) as preferred_contact_time,
+        
+        -- Metadatos
+        '200k' as dataset_source,
+        current_timestamp as _ingested_at
+    from raw_source
+)
+
+-- SELECT FINAL
+select * from final_formatted
+    );
+  
+  
+[0m00:14:53.167457 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m00:14:53.186268 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.188288 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_all_tickets"} */
+alter view "support_200k"."main"."stg_all_tickets" rename to "stg_all_tickets__dbt_backup"
+[0m00:14:53.189143 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m00:14:53.205832 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.206373 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_all_tickets"} */
+alter view "support_200k"."main"."stg_all_tickets__dbt_tmp" rename to "stg_all_tickets"
+[0m00:14:53.211218 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m00:14:53.212870 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: COMMIT
+[0m00:14:53.219752 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.222733 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: COMMIT
+[0m00:14:53.232186 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m00:14:53.241917 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.stg_all_tickets"
+[0m00:14:53.248682 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_all_tickets"} */
+
+      drop view if exists "support_200k"."main"."stg_all_tickets__dbt_backup" cascade
+    
+[0m00:14:53.286930 [debug] [Thread-1 (]: SQL status: OK in 0.038 seconds
+[0m00:14:53.291809 [debug] [Thread-1 (]: On model.customer_support_tickets.stg_all_tickets: Close
+[0m00:14:53.299218 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414ff63690>]}
+[0m00:14:53.301578 [info ] [Thread-1 (]: 7 of 17 OK created sql view model main.stg_all_tickets ......................... [[32mOK[0m in 0.20s]
+[0m00:14:53.305374 [debug] [Thread-1 (]: Finished running node model.customer_support_tickets.stg_all_tickets
+[0m00:14:55.150829 [debug] [Thread-2 (]: SQL status: OK in 2.465 seconds
+[0m00:14:55.154424 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.157349 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'mart_customer_risk_v2'
+  
+[0m00:14:55.158563 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:14:55.160053 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.162248 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main_marts'
+      AND table_name = 'mart_customer_risk_v2'
+  
+[0m00:14:55.163252 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:14:55.173925 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.178293 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+alter table "support_200k"."main_marts"."mart_customer_risk_v2" rename to "mart_customer_risk_v2__dbt_backup"
+[0m00:14:55.179184 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m00:14:55.183027 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.186360 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+alter table "support_200k"."main_marts"."mart_customer_risk_v2__dbt_tmp" rename to "mart_customer_risk_v2"
+[0m00:14:55.188793 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m00:14:55.192413 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: COMMIT
+[0m00:14:55.194261 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.197243 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: COMMIT
+[0m00:14:55.630091 [debug] [Thread-2 (]: SQL status: OK in 0.432 seconds
+[0m00:14:55.646169 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_customer_risk_v2"
+[0m00:14:55.646833 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_customer_risk_v2"} */
+
+      drop table if exists "support_200k"."main_marts"."mart_customer_risk_v2__dbt_backup" cascade
+    
+[0m00:14:55.659238 [debug] [Thread-2 (]: SQL status: OK in 0.012 seconds
+[0m00:14:55.662594 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_customer_risk_v2: Close
+[0m00:14:55.665344 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794157492850>]}
+[0m00:14:55.664052 [debug] [Thread-4 (]: SQL status: OK in 2.677 seconds
+[0m00:14:55.666842 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:55.667532 [info ] [Thread-2 (]: 2 of 17 OK created sql table model main_marts.mart_customer_risk_v2 ............ [[32mOK[0m in 3.13s]
+[0m00:14:55.668494 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'base_fact_tickets'
+  
+[0m00:14:55.669681 [debug] [Thread-2 (]: Finished running node model.customer_support_tickets.mart_customer_risk_v2
+[0m00:14:55.671958 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:55.673738 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:55.674476 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'base_fact_tickets'
+  
+[0m00:14:55.677877 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m00:14:55.685167 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:55.685747 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+alter table "support_200k"."main"."base_fact_tickets" rename to "base_fact_tickets__dbt_backup"
+[0m00:14:55.686732 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:55.690478 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:55.690967 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+alter table "support_200k"."main"."base_fact_tickets__dbt_tmp" rename to "base_fact_tickets"
+[0m00:14:55.691867 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:55.693631 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: COMMIT
+[0m00:14:55.694130 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:55.694670 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: COMMIT
+[0m00:14:56.320758 [debug] [Thread-3 (]: SQL status: OK in 3.152 seconds
+[0m00:14:56.322294 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:56.324704 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_tickets'
+  
+[0m00:14:56.325826 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:56.329215 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:56.329646 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_tickets'
+  
+[0m00:14:56.332577 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m00:14:56.336936 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:56.339269 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+alter table "support_200k"."main"."stg_tickets" rename to "stg_tickets__dbt_backup"
+[0m00:14:56.340003 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:56.348043 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:56.348478 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+alter table "support_200k"."main"."stg_tickets__dbt_tmp" rename to "stg_tickets"
+[0m00:14:56.351203 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m00:14:56.352815 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: COMMIT
+[0m00:14:56.355289 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:56.355689 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: COMMIT
+[0m00:14:57.820848 [debug] [Thread-4 (]: SQL status: OK in 2.125 seconds
+[0m00:14:57.826278 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.base_fact_tickets"
+[0m00:14:57.827270 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.base_fact_tickets"} */
+
+      drop table if exists "support_200k"."main"."base_fact_tickets__dbt_backup" cascade
+    
+[0m00:14:57.826867 [debug] [Thread-3 (]: SQL status: OK in 1.471 seconds
+[0m00:14:57.831179 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.stg_tickets"
+[0m00:14:57.832617 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.stg_tickets"} */
+
+      drop table if exists "support_200k"."main"."stg_tickets__dbt_backup" cascade
+    
+[0m00:14:57.833446 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m00:14:57.835148 [debug] [Thread-4 (]: On model.customer_support_tickets.base_fact_tickets: Close
+[0m00:14:57.836071 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414ff74dd0>]}
+[0m00:14:57.838579 [info ] [Thread-4 (]: 6 of 17 OK created sql table model main.base_fact_tickets ...................... [[32mOK[0m in 4.92s]
+[0m00:14:57.840489 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.base_fact_tickets
+[0m00:14:57.841889 [debug] [Thread-1 (]: Began running node model.customer_support_tickets.fact_tickets
+[0m00:14:57.842676 [info ] [Thread-1 (]: 9 of 17 START sql table model main.fact_tickets ................................ [RUN]
+[0m00:14:57.843930 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.stg_all_tickets, now model.customer_support_tickets.fact_tickets)
+[0m00:14:57.844764 [debug] [Thread-1 (]: Began compiling node model.customer_support_tickets.fact_tickets
+[0m00:14:57.852535 [debug] [Thread-1 (]: Writing injected SQL for node "model.customer_support_tickets.fact_tickets"
+[0m00:14:57.854763 [debug] [Thread-3 (]: SQL status: OK in 0.021 seconds
+[0m00:14:57.856539 [debug] [Thread-3 (]: On model.customer_support_tickets.stg_tickets: Close
+[0m00:14:57.857929 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794154113810>]}
+[0m00:14:57.857241 [debug] [Thread-1 (]: Began executing node model.customer_support_tickets.fact_tickets
+[0m00:14:57.862935 [debug] [Thread-1 (]: Writing runtime sql for node "model.customer_support_tickets.fact_tickets"
+[0m00:14:57.863482 [info ] [Thread-3 (]: 8 of 17 OK created sql table model main.stg_tickets ............................ [[32mOK[0m in 4.75s]
+[0m00:14:57.864276 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:14:57.864814 [debug] [Thread-3 (]: Finished running node model.customer_support_tickets.stg_tickets
+[0m00:14:57.865229 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: BEGIN
+[0m00:14:57.867361 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:14:57.866089 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.mart_channel_efficiency
+[0m00:14:57.866995 [debug] [Thread-3 (]: Began running node model.customer_support_tickets.mart_operations_sla
+[0m00:14:57.866526 [debug] [Thread-2 (]: Began running node model.customer_support_tickets.mart_cx_satisfaction
+[0m00:14:57.868175 [info ] [Thread-4 (]: 10 of 17 START sql table model main.mart_channel_efficiency .................... [RUN]
+[0m00:14:57.870706 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.base_fact_tickets, now model.customer_support_tickets.mart_channel_efficiency)
+[0m00:14:57.868666 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:14:57.869265 [info ] [Thread-3 (]: 12 of 17 START sql table model main.mart_operations_sla ........................ [RUN]
+[0m00:14:57.870125 [info ] [Thread-2 (]: 11 of 17 START sql table model main.mart_cx_satisfaction ....................... [RUN]
+[0m00:14:57.871803 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.mart_channel_efficiency
+[0m00:14:57.872496 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:14:57.873524 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.stg_tickets, now model.customer_support_tickets.mart_operations_sla)
+[0m00:14:57.874115 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_customer_risk_v2, now model.customer_support_tickets.mart_cx_satisfaction)
+[0m00:14:57.879032 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:57.879659 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."fact_tickets__dbt_tmp"
+  
+    as (
+      
+
+with tickets as (
+    select * from "support_200k"."main"."base_fact_tickets"
+),
+
+dates as (
+    select * from "support_200k"."main"."dim_date"
+)
+
+select
+    t.*,
+    d.month as month_name, 
+    d.year as fiscal_year
+from tickets t
+left join dates d 
+    on cast(t.ticket_created_date as date) = d.date_actual
+    );
+  
+  
+[0m00:14:57.880302 [debug] [Thread-3 (]: Began compiling node model.customer_support_tickets.mart_operations_sla
+[0m00:14:57.880808 [debug] [Thread-2 (]: Began compiling node model.customer_support_tickets.mart_cx_satisfaction
+[0m00:14:57.882525 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.mart_channel_efficiency
+[0m00:14:57.897653 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:57.897134 [debug] [Thread-2 (]: Writing injected SQL for node "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:57.907938 [debug] [Thread-2 (]: Began executing node model.customer_support_tickets.mart_cx_satisfaction
+[0m00:14:57.904738 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:57.916434 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:57.916911 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: BEGIN
+[0m00:14:57.917410 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:14:57.915601 [debug] [Thread-3 (]: Began executing node model.customer_support_tickets.mart_operations_sla
+[0m00:14:57.917926 [debug] [Thread-2 (]: Writing runtime sql for node "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:57.926653 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:57.927154 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: BEGIN
+[0m00:14:57.929228 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m00:14:57.925564 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:57.927824 [debug] [Thread-4 (]: SQL status: OK in 0.010 seconds
+[0m00:14:57.930164 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:57.931344 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_channel_efficiency__dbt_tmp"
+  
+    as (
+      
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+channel_metrics as (
+    select
+        -- Cambiado de ticket_channel a channel
+        channel,
+        -- Cambiado de ticket_status a status
+        status,
+        count(ticket_id) as total_tickets,
+        avg(customer_satisfaction_score) as avg_satisfaction
+    from base
+    group by 1, 2
+)
+
+select * from channel_metrics
+    );
+  
+  
+[0m00:14:57.930858 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:57.935348 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: BEGIN
+[0m00:14:57.935820 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:14:57.936600 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:57.938604 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:57.931961 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m00:14:57.943404 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:57.944144 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_cx_satisfaction__dbt_tmp"
+  
+    as (
+      
+
+-- Dashboard 3: Priority Matrix + CX
+-- Responde:
+--   - Correlación edad-satisfacción
+--   - Canal con mayor satisfacción
+--   - Producto con más quejas críticas
+--   - Diferencia de satisfacción por género
+--   - Tickets con mayor resolution_time_hours → peor rating
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+enriched as (
+    select
+        *,
+        case
+            when customer_age < 25               then 'Gen Z (<25)'
+            when customer_age between 25 and 34  then 'Millennial (25-34)'
+            when customer_age between 35 and 44  then 'Gen X (35-44)'
+            when customer_age between 45 and 59  then 'Boomer (45-59)'
+            else                                      'Senior (60+)'
+        end as age_segment,
+
+        -- Bucket de resolución (CORREGIDO: resolution_time_hours)
+        case
+            when resolution_time_hours < 6   then '0-6h'
+            when resolution_time_hours < 24  then '6-24h'
+            when resolution_time_hours < 72  then '1-3 days'
+            else                                  '3+ days'
+        end as resolution_bucket
+
+    from base
+)
+
+select
+    channel as ticket_channel,
+    priority as ticket_priority,
+    category as ticket_type,
+    status as ticket_status,
+    product as product_purchased,
+    customer_gender,
+    age_segment,
+    resolution_bucket,
+
+    count(*)                           as total_tickets,
+    avg(customer_satisfaction_score)   as avg_satisfaction,
+    avg(resolution_time_hours)         as avg_resolution_hrs,
+    avg(first_response_time_hours)     as avg_first_response_hrs,
+
+    -- Para Priority Matrix heatmap
+    sum(case when priority = 'critical' then 1 else 0 end) as critical_count,
+    sum(case when status   = 'closed'   then 1 else 0 end) as closed_count,
+
+    round(
+        100.0 * sum(case when status='closed' then 1 else 0 end) / count(*)
+    , 1) as pct_closed
+
+from enriched
+group by 1,2,3,4,5,6,7,8
+    );
+  
+  
+[0m00:14:57.939321 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_operations_sla__dbt_tmp"
+  
+    as (
+      
+
+-- Dashboard 3: Priority Matrix + CX
+-- Responde:
+--   - Correlación edad-satisfacción
+--   - Canal con mayor satisfacción
+--   - Producto con más quejas críticas
+--   - Diferencia de satisfacción por género
+--   - Tickets con mayor resolution_time_hours → peor rating
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+enriched as (
+    select
+        *,
+        case
+            when customer_age < 25               then 'Gen Z (<25)'
+            when customer_age between 25 and 34  then 'Millennial (25-34)'
+            when customer_age between 35 and 44  then 'Gen X (35-44)'
+            when customer_age between 45 and 59  then 'Boomer (45-59)'
+            else                                      'Senior (60+)'
+        end as age_segment,
+
+        -- Bucket de resolución (Corregido: resolution_time_hours)
+        case
+            when resolution_time_hours < 6   then '0-6h'
+            when resolution_time_hours < 24  then '6-24h'
+            when resolution_time_hours < 72  then '1-3 days'
+            else                                  '3+ days'
+        end as resolution_bucket
+
+    from base
+)
+
+select
+    channel as ticket_channel,
+    priority as ticket_priority,
+    category as ticket_type,
+    status as ticket_status,
+    product as product_purchased,
+    customer_gender,
+    age_segment,
+    resolution_bucket,
+
+    count(*)                           as total_tickets,
+    avg(customer_satisfaction_score)   as avg_satisfaction,
+    avg(resolution_time_hours)         as avg_resolution_hrs,
+    avg(first_response_time_hours)     as avg_first_response_hrs,
+
+    -- Para Priority Matrix heatmap
+    sum(case when priority = 'critical' then 1 else 0 end) as critical_count,
+    sum(case when status   = 'closed'   then 1 else 0 end) as closed_count,
+
+    round(
+        100.0 * sum(case when status='closed' then 1 else 0 end) / count(*)
+    , 1) as pct_closed
+
+from enriched
+group by 1,2,3,4,5,6,7,8
+    );
+  
+  
+[0m00:14:57.992693 [debug] [Thread-4 (]: SQL status: OK in 0.058 seconds
+[0m00:14:57.998181 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:57.998771 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_channel_efficiency'
+  
+[0m00:14:58.001903 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:58.005564 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:58.010219 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_channel_efficiency'
+  
+[0m00:14:58.011354 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:58.025648 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:58.029325 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+alter table "support_200k"."main"."mart_channel_efficiency" rename to "mart_channel_efficiency__dbt_backup"
+[0m00:14:58.032361 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m00:14:58.045192 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:58.048306 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+alter table "support_200k"."main"."mart_channel_efficiency__dbt_tmp" rename to "mart_channel_efficiency"
+[0m00:14:58.049298 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:58.055782 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: COMMIT
+[0m00:14:58.056318 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:58.059271 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: COMMIT
+[0m00:14:58.072289 [debug] [Thread-4 (]: SQL status: OK in 0.010 seconds
+[0m00:14:58.086150 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_channel_efficiency"
+[0m00:14:58.086777 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_channel_efficiency"} */
+
+      drop table if exists "support_200k"."main"."mart_channel_efficiency__dbt_backup" cascade
+    
+[0m00:14:58.093216 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m00:14:58.094883 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_channel_efficiency: Close
+[0m00:14:58.096639 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414ff0a650>]}
+[0m00:14:58.099552 [info ] [Thread-4 (]: 10 of 17 OK created sql table model main.mart_channel_efficiency ............... [[32mOK[0m in 0.23s]
+[0m00:14:58.102845 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.mart_channel_efficiency
+[0m00:14:58.105530 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.mart_operations_sla_partitioned
+[0m00:14:58.108590 [info ] [Thread-4 (]: 13 of 17 START sql table model main.mart_operations_sla_partitioned ............ [RUN]
+[0m00:14:58.110577 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_channel_efficiency, now model.customer_support_tickets.mart_operations_sla_partitioned)
+[0m00:14:58.112279 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.mart_operations_sla_partitioned
+[0m00:14:58.128444 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.129522 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.mart_operations_sla_partitioned
+[0m00:14:58.144536 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.146718 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.150253 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: BEGIN
+[0m00:14:58.150729 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:14:58.151581 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:58.156254 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.156942 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_operations_sla_partitioned__dbt_tmp"
+  
+    as (
+      
+
+-- ============================================================
+-- mart_operations_sla_partitioned
+-- ============================================================
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+enriched as (
+    select
+        *,
+        -- CORRECCIÓN: purchase_date no existe, usamos ticket_created_date
+        extract('year'  from ticket_created_date)::integer  as part_year,
+        extract('month' from ticket_created_date)::integer  as part_month,
+
+        -- SLA flags (Ajustados a columnas reales: status y priority)
+        case when status in ('open','pending customer response')
+             then 1 else 0 end                         as is_backlog,
+        case when priority = 'critical'
+              and status != 'closed' then 1 else 0 end as is_critical_unresolved
+
+    from base
+)
+
+select
+    -- ── Columnas de partición y cluster key
+    part_year,
+    part_month,
+    channel as ticket_channel,          
+
+    -- ── Dimensiones (mapeadas a nombres reales)
+    priority as ticket_priority,
+    status as ticket_status,
+    category as ticket_type,
+    category as ticket_subject, -- Usado como proxy de subject
+
+    -- ── Métricas (basadas en columnas confirmadas)
+    count(*)                                 as total_tickets,
+    avg(first_response_time_hours)           as avg_first_response_hrs,
+    avg(resolution_time_hours)               as avg_resolution_hrs,
+    avg(customer_satisfaction_score)         as avg_satisfaction,
+    sum(is_backlog)                          as backlog_count,
+    sum(is_critical_unresolved)              as critical_unresolved_count,
+
+    round(
+        100.0 * sum(is_critical_unresolved)
+            / nullif(sum(case when priority='critical' then 1 end), 0)
+    , 1)                                     as pct_critical_unresolved
+
+from enriched
+group by 1,2,3,4,5,6,7
+order by part_year, part_month, ticket_channel
+    );
+  
+  
+[0m00:14:58.526918 [debug] [Thread-4 (]: SQL status: OK in 0.369 seconds
+[0m00:14:58.544647 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.545182 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_operations_sla_partitioned'
+  
+[0m00:14:58.546439 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:58.548135 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.548651 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_operations_sla_partitioned'
+  
+[0m00:14:58.549695 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:58.555801 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.556326 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+alter table "support_200k"."main"."mart_operations_sla_partitioned" rename to "mart_operations_sla_partitioned__dbt_backup"
+[0m00:14:58.557125 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:58.564675 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.565606 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+alter table "support_200k"."main"."mart_operations_sla_partitioned__dbt_tmp" rename to "mart_operations_sla_partitioned"
+[0m00:14:58.566350 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:58.571211 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: COMMIT
+[0m00:14:58.571654 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.572088 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: COMMIT
+[0m00:14:58.741457 [debug] [Thread-4 (]: SQL status: OK in 0.169 seconds
+[0m00:14:58.749310 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla_partitioned"
+[0m00:14:58.753599 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla_partitioned"} */
+
+      drop table if exists "support_200k"."main"."mart_operations_sla_partitioned__dbt_backup" cascade
+    
+[0m00:14:58.755931 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m00:14:58.758369 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_operations_sla_partitioned: Close
+[0m00:14:58.763466 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414fe35d50>]}
+[0m00:14:58.764392 [info ] [Thread-4 (]: 13 of 17 OK created sql table model main.mart_operations_sla_partitioned ....... [[32mOK[0m in 0.65s]
+[0m00:14:58.767431 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.mart_operations_sla_partitioned
+[0m00:14:58.770409 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.mart_product_health
+[0m00:14:58.771508 [info ] [Thread-4 (]: 14 of 17 START sql table model main.mart_product_health ........................ [RUN]
+[0m00:14:58.773626 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_operations_sla_partitioned, now model.customer_support_tickets.mart_product_health)
+[0m00:14:58.776046 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.mart_product_health
+[0m00:14:58.798694 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.mart_product_health"
+[0m00:14:58.800719 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.mart_product_health
+[0m00:14:58.819420 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.mart_product_health"
+[0m00:14:58.823689 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:58.826325 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: BEGIN
+[0m00:14:58.826792 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:14:58.829566 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m00:14:58.832229 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:58.832984 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_product_health__dbt_tmp"
+  
+    as (
+      
+
+-- ============================================================
+-- mart_product_health
+-- Pregunta central: ¿Qué productos generan más dolor al cliente?
+-- ============================================================
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+product_stats as (
+    select
+        product, -- Corregido: product_purchased -> product
+        category as ticket_type, -- Mapeo a columna real
+        priority as ticket_priority, -- Mapeo a columna real
+        status as ticket_status, -- Mapeo a columna real
+        channel as ticket_channel, -- Mapeo a columna real
+
+        count(*)                                                   as total_tickets,
+        avg(customer_satisfaction_score)                           as avg_satisfaction,
+
+        -- Tasa de resolución (solo cerrados)
+        round(
+            100.0 * sum(case when status = 'closed' then 1 else 0 end)
+            / count(*)
+        , 1)                                                       as pct_resolved,
+
+        -- Tickets críticos
+        sum(case when priority = 'critical' then 1 else 0 end) as critical_count,
+
+        round(
+            100.0 * sum(case when priority = 'critical' then 1 else 0 end)
+            / count(*)
+        , 1)                                                       as pct_critical,
+
+        -- Peor escenario: crítico + sin resolver
+        sum(case
+                when priority = 'critical'
+                 and status != 'closed' then 1 else 0
+            end)                                                   as critical_unresolved,
+
+        -- Tiempos promedio
+        avg(first_response_time_hours)                             as avg_first_response_hrs,
+        avg(resolution_time_hours)                                 as avg_resolution_hrs,
+
+        -- Health score: 0 (peor) a 100 (mejor)
+        round(
+            (
+                (100.0 * sum(case when status='closed' then 1 else 0 end) / count(*)) * 0.5
+                + coalesce(avg(customer_satisfaction_score), 3) / 5.0 * 100.0 * 0.5
+            )
+        , 1)                                                       as health_score
+
+    from base
+    group by 1,2,3,4,5
+),
+
+-- Clasificación de riesgo por producto (agrupado)
+product_risk as (
+    select
+        product,
+        avg(pct_resolved)     as avg_pct_resolved,
+        avg(avg_satisfaction) as avg_satisfaction,
+        sum(critical_unresolved) as total_critical_unresolved,
+        sum(total_tickets)    as total_tickets,
+        avg(health_score)     as avg_health_score,
+        case
+            when avg(pct_resolved) < 30 and avg(avg_satisfaction) < 3
+                then '🔴 Alto riesgo'
+            when avg(pct_resolved) < 45 or avg(avg_satisfaction) < 2.5
+                then '🟡 Riesgo medio'
+            else '🟢 Estable'
+        end                   as risk_level
+    from product_stats
+    group by 1
+)
+
+select
+    ps.*,
+    pr.avg_health_score       as product_avg_health,
+    pr.risk_level
+from product_stats ps
+left join product_risk pr using (product)
+order by critical_unresolved desc, total_tickets desc
+    );
+  
+  
+[0m00:14:59.007147 [debug] [Thread-4 (]: SQL status: OK in 0.170 seconds
+[0m00:14:59.012362 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.015263 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_product_health'
+  
+[0m00:14:59.018125 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.022697 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.024262 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_product_health'
+  
+[0m00:14:59.030768 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.047386 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.049195 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+alter table "support_200k"."main"."mart_product_health" rename to "mart_product_health__dbt_backup"
+[0m00:14:59.052070 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:14:59.065075 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.065841 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+alter table "support_200k"."main"."mart_product_health__dbt_tmp" rename to "mart_product_health"
+[0m00:14:59.067282 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.073649 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: COMMIT
+[0m00:14:59.076234 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.076690 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: COMMIT
+[0m00:14:59.149468 [debug] [Thread-4 (]: SQL status: OK in 0.072 seconds
+[0m00:14:59.161531 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_product_health"
+[0m00:14:59.162119 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_product_health"} */
+
+      drop table if exists "support_200k"."main"."mart_product_health__dbt_backup" cascade
+    
+[0m00:14:59.165308 [debug] [Thread-3 (]: SQL status: OK in 1.217 seconds
+[0m00:14:59.166570 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.173823 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_operations_sla'
+  
+[0m00:14:59.174876 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.177262 [debug] [Thread-4 (]: SQL status: OK in 0.013 seconds
+[0m00:14:59.178931 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_product_health: Close
+[0m00:14:59.184108 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7941540ec450>]}
+[0m00:14:59.181419 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.187222 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_operations_sla'
+  
+[0m00:14:59.184856 [info ] [Thread-4 (]: 14 of 17 OK created sql table model main.mart_product_health ................... [[32mOK[0m in 0.41s]
+[0m00:14:59.188294 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.mart_product_health
+[0m00:14:59.189656 [debug] [Thread-4 (]: Began running node model.customer_support_tickets.mart_repeat_customers
+[0m00:14:59.194926 [info ] [Thread-4 (]: 15 of 17 START sql table model main.mart_repeat_customers ...................... [RUN]
+[0m00:14:59.195805 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_product_health, now model.customer_support_tickets.mart_repeat_customers)
+[0m00:14:59.192052 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m00:14:59.200294 [debug] [Thread-4 (]: Began compiling node model.customer_support_tickets.mart_repeat_customers
+[0m00:14:59.217415 [debug] [Thread-4 (]: Writing injected SQL for node "model.customer_support_tickets.mart_repeat_customers"
+[0m00:14:59.220733 [debug] [Thread-4 (]: Began executing node model.customer_support_tickets.mart_repeat_customers
+[0m00:14:59.224261 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.236356 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+alter table "support_200k"."main"."mart_operations_sla" rename to "mart_operations_sla__dbt_backup"
+[0m00:14:59.237378 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.231918 [debug] [Thread-4 (]: Writing runtime sql for node "model.customer_support_tickets.mart_repeat_customers"
+[0m00:14:59.243642 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:14:59.244132 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: BEGIN
+[0m00:14:59.244566 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:14:59.245255 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.248225 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:14:59.241143 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.249707 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+alter table "support_200k"."main"."mart_operations_sla__dbt_tmp" rename to "mart_operations_sla"
+[0m00:14:59.250470 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:59.248917 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_repeat_customers__dbt_tmp"
+  
+    as (
+      
+
+-- ============================================================
+-- mart_repeat_customers
+-- Pregunta central: ¿Hay clientes que abren múltiples tickets?
+-- ============================================================
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+-- Número de tickets por cliente (Agrupado por Email)
+customer_ticket_counts as (
+    select
+        customer_email, -- Identificador único definitivo
+        customer_name,
+        customer_gender,
+        customer_age,
+        count(*)                                                    as ticket_count,
+        count(distinct product)                                     as products_with_issues,
+        count(distinct category)                                    as issue_type_variety,
+
+        -- Satisfacción promedio del cliente
+        avg(customer_satisfaction_score)                            as avg_satisfaction,
+        min(customer_satisfaction_score)                            as min_satisfaction,
+
+        -- ¿Tiene tickets sin resolver? (Basado en status real)
+        sum(case when status != 'closed' then 1 else 0 end)         as unresolved_count,
+
+        -- ¿Alguna vez fue Critical?
+        max(case when priority = 'critical' then 1 else 0 end)      as had_critical,
+
+        -- Canal y Producto más frecuentes
+        mode() within group (order by channel)                      as preferred_channel,
+        mode() within group (order by product)                      as most_complained_product,
+
+        -- Rango de fechas de actividad (Usando ticket_created_date)
+        min(ticket_created_date)                                    as first_ticket,
+        max(ticket_created_date)                                    as last_ticket
+
+    from base
+    group by 1,2,3,4
+),
+
+-- Segmentación de riesgo de churn
+segmented as (
+    select
+        *,
+        case
+            when ticket_count >= 3 then 'Recurrente frecuente (3+)'
+            when ticket_count = 2  then 'Recurrente (2 tickets)'
+            else                        'Primera vez'
+        end                                                         as recurrence_segment,
+
+        case
+            when ticket_count >= 2
+             and (min_satisfaction <= 2 or unresolved_count >= 1
+                  or had_critical = 1)
+                then '🔴 Churn inminente'
+            when ticket_count >= 2
+             and avg_satisfaction < 3
+                then '🟡 Riesgo de churn'
+            when ticket_count >= 2
+                then '🟠 Recurrente estable'
+            else    '🟢 Sin señales'
+        end                                                         as churn_risk
+    from customer_ticket_counts
+)
+
+select
+    customer_email,
+    customer_name,
+    customer_gender,
+    customer_age,
+    ticket_count,
+    products_with_issues,
+    issue_type_variety,
+    round(avg_satisfaction, 2)  as avg_satisfaction,
+    min_satisfaction,
+    unresolved_count,
+    had_critical,
+    preferred_channel,
+    most_complained_product,
+    first_ticket,
+    last_ticket,
+    recurrence_segment,
+    churn_risk
+from segmented
+order by ticket_count desc, avg_satisfaction asc
+    );
+  
+  
+[0m00:14:59.252295 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: COMMIT
+[0m00:14:59.257845 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.258330 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: COMMIT
+[0m00:14:59.446502 [debug] [Thread-3 (]: SQL status: OK in 0.185 seconds
+[0m00:14:59.461593 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_operations_sla"
+[0m00:14:59.462252 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_operations_sla"} */
+
+      drop table if exists "support_200k"."main"."mart_operations_sla__dbt_backup" cascade
+    
+[0m00:14:59.477228 [debug] [Thread-3 (]: SQL status: OK in 0.014 seconds
+[0m00:14:59.478947 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_operations_sla: Close
+[0m00:14:59.481725 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794159dccb90>]}
+[0m00:14:59.491531 [info ] [Thread-3 (]: 12 of 17 OK created sql table model main.mart_operations_sla ................... [[32mOK[0m in 1.61s]
+[0m00:14:59.496129 [debug] [Thread-3 (]: Finished running node model.customer_support_tickets.mart_operations_sla
+[0m00:14:59.500075 [debug] [Thread-3 (]: Began running node model.customer_support_tickets.mart_ticket_funnel
+[0m00:14:59.502614 [info ] [Thread-3 (]: 16 of 17 START sql table model main.mart_ticket_funnel ......................... [RUN]
+[0m00:14:59.508287 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_operations_sla, now model.customer_support_tickets.mart_ticket_funnel)
+[0m00:14:59.508985 [debug] [Thread-3 (]: Began compiling node model.customer_support_tickets.mart_ticket_funnel
+[0m00:14:59.525851 [debug] [Thread-3 (]: Writing injected SQL for node "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.530830 [debug] [Thread-3 (]: Began executing node model.customer_support_tickets.mart_ticket_funnel
+[0m00:14:59.549751 [debug] [Thread-3 (]: Writing runtime sql for node "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.556850 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.558375 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: BEGIN
+[0m00:14:59.560255 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:14:59.564462 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m00:14:59.575146 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.571484 [debug] [Thread-2 (]: SQL status: OK in 1.624 seconds
+[0m00:14:59.576448 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."mart_ticket_funnel__dbt_tmp"
+  
+    as (
+      
+
+-- ============================================================
+-- mart_ticket_funnel
+-- Pregunta central: ¿Cómo fluyen los tickets por el pipeline de soporte?
+--
+-- Responde:
+--   Q1. ¿Qué % de tickets pasan de Open → Pending → Closed?
+--   Q2. ¿En qué etapa se "atascan" más tickets por canal?
+--   Q3. ¿Qué tipo de ticket tiene peor conversión a Closed?
+--   Q4. ¿La prioridad asignada predice si el ticket se resuelve?
+--   Q5. ¿Hay sujetos que NUNCA se resuelven (100% open/pending)?
+-- ============================================================
+
+-- ============================================================
+-- mart_ticket_funnel
+-- Pregunta central: ¿Cómo fluyen los tickets por el pipeline de soporte?
+-- ============================================================
+
+with base as (
+    select * from "support_200k"."main"."stg_tickets"
+),
+
+-- Funnel por dimensiones cruzadas
+funnel as (
+    select
+        channel as ticket_channel, -- Corregido: de ticket_channel a channel
+        category as ticket_type,   -- Mapeo a columna real
+        priority as ticket_priority, -- Mapeo a columna real
+        
+        -- Nota: Si ticket_subject no está en tu lista 100% real, 
+        -- se puede usar issue_description o eliminar de la agrupación.
+        -- Usaremos issue_description como proxy si ticket_subject falla.
+        category as ticket_subject, 
+
+        count(*)                                                    as total_tickets,
+
+        -- Estado actual (Usando nombres de status estándar)
+        sum(case when status = 'open'    then 1 else 0 end) as count_open,
+        sum(case when status in ('pending', 'pending customer response')
+                               then 1 else 0 end)                  as count_pending,
+        sum(case when status = 'closed'  then 1 else 0 end) as count_closed,
+
+        -- Conversión
+        round(100.0 * sum(case when status='closed' then 1 else 0 end)
+              / count(*), 1)                                        as pct_closed,
+
+        round(100.0 * sum(case when status='open' then 1 else 0 end)
+              / count(*), 1)                                        as pct_stuck_open,
+
+        -- Satisfacción de los que sí cerraron (Columna real: customer_satisfaction_score)
+        avg(case when status = 'closed'
+                 then customer_satisfaction_score end)              as avg_satisfaction_closed,
+
+        -- ¿Es un "dead end"? Nunca se cierra
+        case
+            when sum(case when status='closed' then 1 else 0 end) = 0
+                then true else false
+        end                                                         as is_dead_end,
+
+        -- Etiqueta de salud del funnel
+        case
+            when round(100.0 * sum(case when status='closed' then 1 else 0 end)
+                       / count(*), 1) >= 50 then 'Saludable (≥50% cerrados)'
+            when round(100.0 * sum(case when status='closed' then 1 else 0 end)
+                       / count(*), 1) >= 25 then 'Moderado (25-50%)'
+            else                                 'Crítico (<25% cerrados)'
+        end                                                         as funnel_health
+
+    from base
+    group by 1,2,3,4
+)
+
+select * from funnel
+order by pct_stuck_open desc, total_tickets desc
+    );
+  
+  
+[0m00:14:59.582497 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.586570 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_cx_satisfaction'
+  
+[0m00:14:59.587627 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.590566 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.592370 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_cx_satisfaction'
+  
+[0m00:14:59.595302 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m00:14:59.609045 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.611258 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+alter table "support_200k"."main"."mart_cx_satisfaction" rename to "mart_cx_satisfaction__dbt_backup"
+[0m00:14:59.614072 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m00:14:59.619319 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.624282 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+alter table "support_200k"."main"."mart_cx_satisfaction__dbt_tmp" rename to "mart_cx_satisfaction"
+[0m00:14:59.625081 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m00:14:59.629679 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: COMMIT
+[0m00:14:59.633260 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.633649 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: COMMIT
+[0m00:14:59.663360 [debug] [Thread-3 (]: SQL status: OK in 0.080 seconds
+[0m00:14:59.666523 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.668453 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_ticket_funnel'
+  
+[0m00:14:59.671162 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:14:59.675309 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.677740 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_ticket_funnel'
+  
+[0m00:14:59.684432 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m00:14:59.695747 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.700216 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+alter table "support_200k"."main"."mart_ticket_funnel" rename to "mart_ticket_funnel__dbt_backup"
+[0m00:14:59.702664 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m00:14:59.733225 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.733818 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+alter table "support_200k"."main"."mart_ticket_funnel__dbt_tmp" rename to "mart_ticket_funnel"
+[0m00:14:59.744262 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m00:14:59.746257 [debug] [Thread-2 (]: SQL status: OK in 0.112 seconds
+[0m00:14:59.751633 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: COMMIT
+[0m00:14:59.766841 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.768231 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: COMMIT
+[0m00:14:59.759908 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.mart_cx_satisfaction"
+[0m00:14:59.771676 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_cx_satisfaction"} */
+
+      drop table if exists "support_200k"."main"."mart_cx_satisfaction__dbt_backup" cascade
+    
+[0m00:14:59.781148 [debug] [Thread-3 (]: SQL status: OK in 0.012 seconds
+[0m00:14:59.789359 [debug] [Thread-2 (]: SQL status: OK in 0.016 seconds
+[0m00:14:59.797353 [debug] [Thread-2 (]: On model.customer_support_tickets.mart_cx_satisfaction: Close
+[0m00:14:59.807356 [debug] [Thread-3 (]: Using duckdb connection "model.customer_support_tickets.mart_ticket_funnel"
+[0m00:14:59.822272 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_ticket_funnel"} */
+
+      drop table if exists "support_200k"."main"."mart_ticket_funnel__dbt_backup" cascade
+    
+[0m00:14:59.817889 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414fe7e8d0>]}
+[0m00:14:59.828377 [info ] [Thread-2 (]: 11 of 17 OK created sql table model main.mart_cx_satisfaction .................. [[32mOK[0m in 1.94s]
+[0m00:14:59.834252 [debug] [Thread-2 (]: Finished running node model.customer_support_tickets.mart_cx_satisfaction
+[0m00:14:59.835821 [debug] [Thread-3 (]: SQL status: OK in 0.013 seconds
+[0m00:14:59.844796 [debug] [Thread-3 (]: On model.customer_support_tickets.mart_ticket_funnel: Close
+[0m00:14:59.846406 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794154111f90>]}
+[0m00:14:59.847149 [info ] [Thread-3 (]: 16 of 17 OK created sql table model main.mart_ticket_funnel .................... [[32mOK[0m in 0.34s]
+[0m00:14:59.849931 [debug] [Thread-3 (]: Finished running node model.customer_support_tickets.mart_ticket_funnel
+[0m00:14:59.998112 [debug] [Thread-1 (]: SQL status: OK in 2.116 seconds
+[0m00:15:00.003057 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.003568 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'fact_tickets'
+  
+[0m00:15:00.005081 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:15:00.017075 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.019668 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'fact_tickets'
+  
+[0m00:15:00.021868 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m00:15:00.032810 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.033311 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+alter table "support_200k"."main"."fact_tickets" rename to "fact_tickets__dbt_backup"
+[0m00:15:00.037410 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m00:15:00.045273 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.045729 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+alter table "support_200k"."main"."fact_tickets__dbt_tmp" rename to "fact_tickets"
+[0m00:15:00.049375 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m00:15:00.052384 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: COMMIT
+[0m00:15:00.052850 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.053320 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: COMMIT
+[0m00:15:00.885423 [debug] [Thread-1 (]: SQL status: OK in 0.832 seconds
+[0m00:15:00.897498 [debug] [Thread-1 (]: Using duckdb connection "model.customer_support_tickets.fact_tickets"
+[0m00:15:00.898033 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fact_tickets"} */
+
+      drop table if exists "support_200k"."main"."fact_tickets__dbt_backup" cascade
+    
+[0m00:15:00.905028 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m00:15:00.906639 [debug] [Thread-1 (]: On model.customer_support_tickets.fact_tickets: Close
+[0m00:15:00.910315 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7941541a1a90>]}
+[0m00:15:00.911077 [info ] [Thread-1 (]: 9 of 17 OK created sql table model main.fact_tickets ........................... [[32mOK[0m in 3.07s]
+[0m00:15:00.917060 [debug] [Thread-1 (]: Finished running node model.customer_support_tickets.fact_tickets
+[0m00:15:00.920851 [debug] [Thread-2 (]: Began running node model.customer_support_tickets.fct_global_tickets
+[0m00:15:00.922648 [info ] [Thread-2 (]: 17 of 17 START sql table model main.fct_global_tickets ......................... [RUN]
+[0m00:15:00.927163 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.customer_support_tickets.mart_cx_satisfaction, now model.customer_support_tickets.fct_global_tickets)
+[0m00:15:00.928978 [debug] [Thread-2 (]: Began compiling node model.customer_support_tickets.fct_global_tickets
+[0m00:15:00.941197 [debug] [Thread-2 (]: Writing injected SQL for node "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:00.942281 [debug] [Thread-2 (]: Began executing node model.customer_support_tickets.fct_global_tickets
+[0m00:15:00.947602 [debug] [Thread-2 (]: Writing runtime sql for node "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:00.948650 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:00.949192 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: BEGIN
+[0m00:15:00.949719 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m00:15:00.950685 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:15:00.951243 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:00.951847 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+
+  
+    
+    
+
+    create  table
+      "support_200k"."main"."fct_global_tickets__dbt_tmp"
+  
+    as (
+      
+
+select
+    -- 1. ID único (Surrogate Key) para conteos y joins en el Dashboard
+    md5(cast(coalesce(cast(f.ticket_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(f.dataset_source as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as ticket_sk,
+    
+    -- 2. Lógica de SLA (Transforma 0/1 en etiquetas de texto para los gráficos)
+    case 
+        when f.sla_breached = 1 then 'SLA_Incumplido' 
+        else 'SLA_Cumplido' 
+    end as sla_status,
+
+    -- 3. Todas las métricas confirmadas (satisfaction, resolution_time, complexity, etc.)
+    f.*,
+    
+    -- 4. Dimensiones de tiempo desde dim_date
+    d.year,
+    d.month as month,      -- Requerido por la página SLA Deep Dive
+    d.month as month_num,  -- Requerido por otras lógicas de ordenamiento
+    
+    -- 5. Nombre del mes (Para filtros y ejes X legibles en Streamlit)
+    case d.month
+        when 1 then 'January' when 2 then 'February' when 3 then 'March'
+        when 4 then 'April' when 5 then 'May' when 6 then 'June'
+        when 7 then 'July' when 8 then 'August' when 9 then 'September'
+        when 10 then 'October' when 11 then 'November' when 12 then 'December'
+    end as month_name,
+    
+    d.is_weekend
+    
+from "support_200k"."main"."fact_tickets" f
+left join "support_200k"."main"."dim_date" d 
+    on cast(f.ticket_created_date as date) = d.date_actual
+    );
+  
+  
+[0m00:15:03.802809 [debug] [Thread-2 (]: SQL status: OK in 2.848 seconds
+[0m00:15:03.805923 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:03.806426 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'fct_global_tickets'
+  
+[0m00:15:03.807825 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:15:03.809300 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:03.809742 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'fct_global_tickets'
+  
+[0m00:15:03.810780 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:15:03.819621 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:03.820098 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+alter table "support_200k"."main"."fct_global_tickets" rename to "fct_global_tickets__dbt_backup"
+[0m00:15:03.821290 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:15:03.916321 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:03.916928 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+alter table "support_200k"."main"."fct_global_tickets__dbt_tmp" rename to "fct_global_tickets"
+[0m00:15:03.917427 [debug] [Thread-4 (]: SQL status: OK in 4.665 seconds
+[0m00:15:03.919224 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:03.919903 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m00:15:03.922107 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: COMMIT
+[0m00:15:03.920417 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_repeat_customers'
+  
+[0m00:15:03.923679 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:15:03.922580 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:03.925632 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: COMMIT
+[0m00:15:03.925141 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:03.927233 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'mart_repeat_customers'
+  
+[0m00:15:03.931853 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:15:03.941370 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:03.944297 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+alter table "support_200k"."main"."mart_repeat_customers" rename to "mart_repeat_customers__dbt_backup"
+[0m00:15:03.945100 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:15:03.949358 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:03.952358 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+alter table "support_200k"."main"."mart_repeat_customers__dbt_tmp" rename to "mart_repeat_customers"
+[0m00:15:03.953194 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m00:15:03.956892 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: COMMIT
+[0m00:15:03.958768 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:03.959322 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: COMMIT
+[0m00:15:04.390027 [debug] [Thread-2 (]: SQL status: OK in 0.464 seconds
+[0m00:15:04.394480 [debug] [Thread-2 (]: Using duckdb connection "model.customer_support_tickets.fct_global_tickets"
+[0m00:15:04.395366 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.fct_global_tickets"} */
+
+      drop table if exists "support_200k"."main"."fct_global_tickets__dbt_backup" cascade
+    
+[0m00:15:04.394914 [debug] [Thread-4 (]: SQL status: OK in 0.435 seconds
+[0m00:15:04.399236 [debug] [Thread-4 (]: Using duckdb connection "model.customer_support_tickets.mart_repeat_customers"
+[0m00:15:04.400652 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "model.customer_support_tickets.mart_repeat_customers"} */
+
+      drop table if exists "support_200k"."main"."mart_repeat_customers__dbt_backup" cascade
+    
+[0m00:15:04.402277 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m00:15:04.404798 [debug] [Thread-2 (]: On model.customer_support_tickets.fct_global_tickets: Close
+[0m00:15:04.405893 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79414ff6cc90>]}
+[0m00:15:04.405227 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m00:15:04.407544 [debug] [Thread-4 (]: On model.customer_support_tickets.mart_repeat_customers: Close
+[0m00:15:04.408183 [info ] [Thread-2 (]: 17 of 17 OK created sql table model main.fct_global_tickets .................... [[32mOK[0m in 3.48s]
+[0m00:15:04.409285 [debug] [Thread-2 (]: Finished running node model.customer_support_tickets.fct_global_tickets
+[0m00:15:04.409776 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '93a7e1fd-1a76-4d30-b2a6-11993c1b22ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415417a310>]}
+[0m00:15:04.410568 [info ] [Thread-4 (]: 15 of 17 OK created sql table model main.mart_repeat_customers ................. [[32mOK[0m in 5.21s]
+[0m00:15:04.411232 [debug] [Thread-4 (]: Finished running node model.customer_support_tickets.mart_repeat_customers
+[0m00:15:04.415988 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:04.416659 [debug] [MainThread]: On master: BEGIN
+[0m00:15:04.417165 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:15:04.417807 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m00:15:04.418185 [debug] [MainThread]: On master: COMMIT
+[0m00:15:04.418504 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:04.418778 [debug] [MainThread]: On master: COMMIT
+[0m00:15:04.419227 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:15:04.419514 [debug] [MainThread]: On master: Close
+[0m00:15:04.419892 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:15:04.420187 [debug] [MainThread]: Connection 'model.customer_support_tickets.mart_ticket_funnel' was properly closed.
+[0m00:15:04.420448 [debug] [MainThread]: Connection 'model.customer_support_tickets.fact_tickets' was properly closed.
+[0m00:15:04.420707 [debug] [MainThread]: Connection 'model.customer_support_tickets.fct_global_tickets' was properly closed.
+[0m00:15:04.420959 [debug] [MainThread]: Connection 'model.customer_support_tickets.mart_repeat_customers' was properly closed.
+[0m00:15:04.421379 [info ] [MainThread]: 
+[0m00:15:04.421733 [info ] [MainThread]: Finished running 13 table models, 4 view models in 0 hours 0 minutes and 12.63 seconds (12.63s).
+[0m00:15:04.424432 [debug] [MainThread]: Command end result
+[0m00:15:04.465708 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/capstone_support/target/manifest.json
+[0m00:15:04.469587 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/capstone_support/target/semantic_manifest.json
+[0m00:15:04.477765 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/capstone_support/target/run_results.json
+[0m00:15:04.478139 [info ] [MainThread]: 
+[0m00:15:04.478613 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:15:04.479055 [info ] [MainThread]: 
+[0m00:15:04.479501 [info ] [MainThread]: Done. PASS=17 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=17
+[0m00:15:04.482579 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.63162, "process_in_blocks": "121504", "process_kernel_time": 1.49808, "process_mem_max_rss": "1187180", "process_out_blocks": "226592", "process_user_time": 17.778635}
+[0m00:15:04.483533 [debug] [MainThread]: Command `dbt run` succeeded at 00:15:04.483096 after 14.63 seconds
+[0m00:15:04.486531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415f9041d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79415da6b850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794162684690>]}
+[0m00:15:04.487202 [debug] [MainThread]: Flushing usage events
+[0m00:15:04.739816 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:15:08.034358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a47dbdb10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a48154850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a48154910>]}
+
+
+============================== 00:15:08.042085 | 1604eaa8-9f40-4dc8-b05d-4122a0f7eff4 ==============================
+[0m00:15:08.042085 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:15:08.042974 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'introspect': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'version_check': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt test --profiles-dir ..', 'log_path': '/usr/app/dbt/capstone_support/logs', 'printer_width': '80', 'empty': 'None', 'profiles_dir': '..', 'write_json': 'True', 'debug': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'target_path': 'None', 'warn_error': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False'}
+[0m00:15:08.317633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a4410b090>]}
+[0m00:15:08.408607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a4afae490>]}
+[0m00:15:08.411591 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m00:15:08.615215 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m00:15:08.856266 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:15:08.856688 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m00:15:08.856987 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:15:08.919799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a42cf79d0>]}
+[0m00:15:09.096636 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/capstone_support/target/manifest.json
+[0m00:15:09.098862 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/capstone_support/target/semantic_manifest.json
+[0m00:15:09.127137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a42f37590>]}
+[0m00:15:09.127674 [info ] [MainThread]: Found 17 models, 2 seeds, 9 data tests, 4 sources, 618 macros
+[0m00:15:09.128237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a49d3aad0>]}
+[0m00:15:09.130884 [info ] [MainThread]: 
+[0m00:15:09.131470 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m00:15:09.132246 [info ] [MainThread]: 
+[0m00:15:09.133072 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m00:15:09.140181 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k_main_main'
+[0m00:15:09.140710 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k_main_marts'
+[0m00:15:09.141401 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_support_200k_main'
+[0m00:15:09.200834 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_main"
+[0m00:15:09.201226 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_marts"
+[0m00:15:09.201569 [debug] [ThreadPool]: On list_support_200k_main_main: BEGIN
+[0m00:15:09.201893 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main"
+[0m00:15:09.202223 [debug] [ThreadPool]: On list_support_200k_main_marts: BEGIN
+[0m00:15:09.202563 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:15:09.202881 [debug] [ThreadPool]: On list_support_200k_main: BEGIN
+[0m00:15:09.203250 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:15:09.203803 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:15:09.371273 [debug] [ThreadPool]: SQL status: OK in 0.169 seconds
+[0m00:15:09.371778 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_main"
+[0m00:15:09.372630 [debug] [ThreadPool]: On list_support_200k_main_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main_main"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_main'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:15:09.372133 [debug] [ThreadPool]: SQL status: OK in 0.169 seconds
+[0m00:15:09.372979 [debug] [ThreadPool]: SQL status: OK in 0.169 seconds
+[0m00:15:09.373970 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main"
+[0m00:15:09.373606 [debug] [ThreadPool]: Using duckdb connection "list_support_200k_main_marts"
+[0m00:15:09.378127 [debug] [ThreadPool]: On list_support_200k_main_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main_marts"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main_marts'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:15:09.374396 [debug] [ThreadPool]: On list_support_200k_main: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "connection_name": "list_support_200k_main"} */
+select
+      'support_200k' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'support_200k'
+  
+[0m00:15:09.384995 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m00:15:09.385964 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m00:15:09.388863 [debug] [ThreadPool]: On list_support_200k_main: ROLLBACK
+[0m00:15:09.389962 [debug] [ThreadPool]: On list_support_200k_main_marts: ROLLBACK
+[0m00:15:09.390499 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m00:15:09.391374 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main_marts'
+[0m00:15:09.391908 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main'
+[0m00:15:09.392854 [debug] [ThreadPool]: On list_support_200k_main_main: ROLLBACK
+[0m00:15:09.393213 [debug] [ThreadPool]: On list_support_200k_main_marts: Close
+[0m00:15:09.393529 [debug] [ThreadPool]: On list_support_200k_main: Close
+[0m00:15:09.394037 [debug] [ThreadPool]: Failed to rollback 'list_support_200k_main_main'
+[0m00:15:09.396537 [debug] [ThreadPool]: On list_support_200k_main_main: Close
+[0m00:15:09.399637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1604eaa8-9f40-4dc8-b05d-4122a0f7eff4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a42b05950>]}
+[0m00:15:09.400144 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:09.400423 [debug] [MainThread]: On master: BEGIN
+[0m00:15:09.400691 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:15:09.401228 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m00:15:09.401520 [debug] [MainThread]: On master: COMMIT
+[0m00:15:09.401807 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:09.402099 [debug] [MainThread]: On master: COMMIT
+[0m00:15:09.402548 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:15:09.402838 [debug] [MainThread]: On master: Close
+[0m00:15:09.406183 [debug] [Thread-1 (]: Began running node test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae
+[0m00:15:09.406524 [debug] [Thread-2 (]: Began running node test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df
+[0m00:15:09.406901 [debug] [Thread-3 (]: Began running node test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c
+[0m00:15:09.407236 [debug] [Thread-4 (]: Began running node test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77
+[0m00:15:09.407555 [info ] [Thread-1 (]: 1 of 9 START test accepted_values_stg_tickets_200k_priority__low__medium__high__critical  [RUN]
+[0m00:15:09.408280 [info ] [Thread-2 (]: 2 of 9 START test not_null_stg_tickets_200k_ticket_id .......................... [RUN]
+[0m00:15:09.409094 [info ] [Thread-3 (]: 3 of 9 START test not_null_stg_tickets_ticket_id ............................... [RUN]
+[0m00:15:09.410931 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_support_200k_main_main, now test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df)
+[0m00:15:09.410459 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_support_200k_main, now test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae)
+[0m00:15:09.409745 [info ] [Thread-4 (]: 4 of 9 START test not_null_stg_users_user_id ................................... [RUN]
+[0m00:15:09.411507 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_support_200k_main_marts, now test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c)
+[0m00:15:09.411964 [debug] [Thread-2 (]: Began compiling node test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df
+[0m00:15:09.412460 [debug] [Thread-1 (]: Began compiling node test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae
+[0m00:15:09.413078 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77'
+[0m00:15:09.413544 [debug] [Thread-3 (]: Began compiling node test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c
+[0m00:15:09.435495 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df"
+[0m00:15:09.438966 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae"
+[0m00:15:09.439397 [debug] [Thread-4 (]: Began compiling node test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77
+[0m00:15:09.443106 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c"
+[0m00:15:09.443875 [debug] [Thread-2 (]: Began executing node test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df
+[0m00:15:09.447550 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77"
+[0m00:15:09.448302 [debug] [Thread-1 (]: Began executing node test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae
+[0m00:15:09.448598 [debug] [Thread-3 (]: Began executing node test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c
+[0m00:15:09.468982 [debug] [Thread-1 (]: Writing runtime sql for node "test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae"
+[0m00:15:09.469648 [debug] [Thread-4 (]: Began executing node test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77
+[0m00:15:09.469996 [debug] [Thread-2 (]: Writing runtime sql for node "test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df"
+[0m00:15:09.477058 [debug] [Thread-2 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df"
+[0m00:15:09.476384 [debug] [Thread-1 (]: Using duckdb connection "test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae"
+[0m00:15:09.477978 [debug] [Thread-1 (]: On test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae: BEGIN
+[0m00:15:09.477470 [debug] [Thread-2 (]: On test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df: BEGIN
+[0m00:15:09.478970 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m00:15:09.475926 [debug] [Thread-4 (]: Writing runtime sql for node "test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77"
+[0m00:15:09.478446 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:15:09.472731 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c"
+[0m00:15:09.480992 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c"
+[0m00:15:09.480316 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m00:15:09.483126 [debug] [Thread-2 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df"
+[0m00:15:09.483608 [debug] [Thread-2 (]: On test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticket_id
+from "support_200k"."main"."stg_tickets_200k"
+where ticket_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.482646 [debug] [Thread-3 (]: On test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c: BEGIN
+[0m00:15:09.484211 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:15:09.482183 [debug] [Thread-4 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77"
+[0m00:15:09.486457 [debug] [Thread-4 (]: On test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77: BEGIN
+[0m00:15:09.481719 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m00:15:09.486981 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m00:15:09.488738 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m00:15:09.487598 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m00:15:09.488030 [debug] [Thread-1 (]: Using duckdb connection "test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae"
+[0m00:15:09.489170 [debug] [Thread-4 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77"
+[0m00:15:09.491225 [debug] [Thread-4 (]: On test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select user_id
+from "support_200k"."main"."stg_users"
+where user_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.490534 [debug] [Thread-1 (]: On test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        priority as value_field,
+        count(*) as n_records
+
+    from "support_200k"."main"."stg_tickets_200k"
+    group by priority
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'low','medium','high','critical'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.490057 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c"
+[0m00:15:09.495320 [debug] [Thread-3 (]: On test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticket_id
+from "support_200k"."main"."stg_tickets"
+where ticket_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.496384 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:15:09.509086 [debug] [Thread-2 (]: SQL status: OK in 0.024 seconds
+[0m00:15:09.512388 [debug] [Thread-2 (]: On test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df: ROLLBACK
+[0m00:15:09.510460 [debug] [Thread-3 (]: On test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c: ROLLBACK
+[0m00:15:09.516290 [debug] [Thread-3 (]: Failed to rollback 'test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c'
+[0m00:15:09.517152 [debug] [Thread-3 (]: On test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c: Close
+[0m00:15:09.518884 [info ] [Thread-3 (]: 3 of 9 PASS not_null_stg_tickets_ticket_id ..................................... [[32mPASS[0m in 0.11s]
+[0m00:15:09.521481 [debug] [Thread-3 (]: Finished running node test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c
+[0m00:15:09.513966 [debug] [Thread-2 (]: Failed to rollback 'test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df'
+[0m00:15:09.520751 [debug] [Thread-1 (]: SQL status: OK in 0.027 seconds
+[0m00:15:09.522095 [debug] [Thread-3 (]: Began running node test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f
+[0m00:15:09.524515 [info ] [Thread-3 (]: 5 of 9 START test source_not_null_raw_200k_customer_support_tickets_200k_ticket_id  [RUN]
+[0m00:15:09.526980 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_support_tickets.not_null_stg_tickets_ticket_id.7a49eb141c, now test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f)
+[0m00:15:09.522589 [debug] [Thread-2 (]: On test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df: Close
+[0m00:15:09.526524 [debug] [Thread-1 (]: On test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae: ROLLBACK
+[0m00:15:09.528980 [debug] [Thread-1 (]: Failed to rollback 'test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae'
+[0m00:15:09.527529 [debug] [Thread-3 (]: Began compiling node test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f
+[0m00:15:09.529759 [debug] [Thread-1 (]: On test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae: Close
+[0m00:15:09.528327 [info ] [Thread-2 (]: 2 of 9 PASS not_null_stg_tickets_200k_ticket_id ................................ [[32mPASS[0m in 0.12s]
+[0m00:15:09.538070 [debug] [Thread-2 (]: Finished running node test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df
+[0m00:15:09.538685 [debug] [Thread-2 (]: Began running node test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f
+[0m00:15:09.539387 [warn ] [Thread-1 (]: 1 of 9 WARN 4 accepted_values_stg_tickets_200k_priority__low__medium__high__critical  [[33mWARN 4[0m in 0.13s]
+[0m00:15:09.540889 [debug] [Thread-1 (]: Finished running node test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae
+[0m00:15:09.536764 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f"
+[0m00:15:09.539983 [info ] [Thread-2 (]: 6 of 9 START test source_unique_raw_200k_customer_support_tickets_200k_ticket_id  [RUN]
+[0m00:15:09.542700 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.customer_support_tickets.not_null_stg_tickets_200k_ticket_id.db81d640df, now test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f)
+[0m00:15:09.543156 [debug] [Thread-2 (]: Began compiling node test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f
+[0m00:15:09.541687 [debug] [Thread-1 (]: Began running node test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709
+[0m00:15:09.549843 [info ] [Thread-1 (]: 7 of 9 START test unique_stg_tickets_200k_ticket_id ............................ [RUN]
+[0m00:15:09.549461 [debug] [Thread-3 (]: Began executing node test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f
+[0m00:15:09.553594 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f"
+[0m00:15:09.556268 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.customer_support_tickets.accepted_values_stg_tickets_200k_priority__low__medium__high__critical.45e94f97ae, now test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709)
+[0m00:15:09.557149 [debug] [Thread-1 (]: Began compiling node test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709
+[0m00:15:09.555958 [debug] [Thread-2 (]: Writing injected SQL for node "test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f"
+[0m00:15:09.563485 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f"
+[0m00:15:09.562808 [debug] [Thread-1 (]: Writing injected SQL for node "test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709"
+[0m00:15:09.566045 [debug] [Thread-2 (]: Began executing node test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f
+[0m00:15:09.564661 [debug] [Thread-3 (]: On test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f: BEGIN
+[0m00:15:09.571584 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:15:09.571114 [debug] [Thread-1 (]: Began executing node test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709
+[0m00:15:09.570532 [debug] [Thread-2 (]: Writing runtime sql for node "test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f"
+[0m00:15:09.576186 [debug] [Thread-2 (]: Using duckdb connection "test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f"
+[0m00:15:09.576621 [debug] [Thread-2 (]: On test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f: BEGIN
+[0m00:15:09.577174 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m00:15:09.577880 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m00:15:09.578656 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f"
+[0m00:15:09.575211 [debug] [Thread-1 (]: Writing runtime sql for node "test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709"
+[0m00:15:09.581149 [debug] [Thread-1 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709"
+[0m00:15:09.579965 [debug] [Thread-3 (]: On test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticket_id
+from "support_200k"."main"."customer_support_tickets_200k"
+where ticket_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.583459 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:15:09.582103 [debug] [Thread-1 (]: On test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709: BEGIN
+[0m00:15:09.581736 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m00:15:09.585627 [debug] [Thread-2 (]: Using duckdb connection "test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f"
+[0m00:15:09.586270 [debug] [Thread-2 (]: On test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ticket_id as unique_field,
+    count(*) as n_records
+
+from "support_200k"."main"."customer_support_tickets_200k"
+where ticket_id is not null
+group by ticket_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.585102 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:15:09.587366 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m00:15:09.592229 [debug] [Thread-1 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709"
+[0m00:15:09.594577 [debug] [Thread-1 (]: On test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ticket_id as unique_field,
+    count(*) as n_records
+
+from "support_200k"."main"."stg_tickets_200k"
+where ticket_id is not null
+group by ticket_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.590658 [debug] [Thread-3 (]: On test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f: ROLLBACK
+[0m00:15:09.596681 [debug] [Thread-3 (]: Failed to rollback 'test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f'
+[0m00:15:09.597195 [debug] [Thread-3 (]: On test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f: Close
+[0m00:15:09.597969 [info ] [Thread-3 (]: 5 of 9 PASS source_not_null_raw_200k_customer_support_tickets_200k_ticket_id ... [[32mPASS[0m in 0.07s]
+[0m00:15:09.603674 [debug] [Thread-3 (]: Finished running node test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f
+[0m00:15:09.604235 [debug] [Thread-3 (]: Began running node test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4
+[0m00:15:09.607279 [info ] [Thread-3 (]: 8 of 9 START test unique_stg_tickets_ticket_id ................................. [RUN]
+[0m00:15:09.607925 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.customer_support_tickets.source_not_null_raw_200k_customer_support_tickets_200k_ticket_id.6f32fff16f, now test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4)
+[0m00:15:09.609690 [debug] [Thread-3 (]: Began compiling node test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4
+[0m00:15:09.635285 [debug] [Thread-3 (]: Writing injected SQL for node "test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4"
+[0m00:15:09.638616 [debug] [Thread-3 (]: Began executing node test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4
+[0m00:15:09.645708 [debug] [Thread-3 (]: Writing runtime sql for node "test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4"
+[0m00:15:09.653588 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4"
+[0m00:15:09.655196 [debug] [Thread-3 (]: On test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4: BEGIN
+[0m00:15:09.655622 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m00:15:09.656408 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m00:15:09.660192 [debug] [Thread-3 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4"
+[0m00:15:09.661223 [debug] [Thread-3 (]: On test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    ticket_id as unique_field,
+    count(*) as n_records
+
+from "support_200k"."main"."stg_tickets"
+where ticket_id is not null
+group by ticket_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.697101 [debug] [Thread-4 (]: SQL status: OK in 0.202 seconds
+[0m00:15:09.697601 [debug] [Thread-2 (]: SQL status: OK in 0.111 seconds
+[0m00:15:09.705295 [debug] [Thread-2 (]: On test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f: ROLLBACK
+[0m00:15:09.706062 [debug] [Thread-2 (]: Failed to rollback 'test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f'
+[0m00:15:09.702993 [debug] [Thread-4 (]: On test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77: ROLLBACK
+[0m00:15:09.707202 [debug] [Thread-4 (]: Failed to rollback 'test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77'
+[0m00:15:09.707664 [debug] [Thread-4 (]: On test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77: Close
+[0m00:15:09.708487 [info ] [Thread-4 (]: 4 of 9 PASS not_null_stg_users_user_id ......................................... [[32mPASS[0m in 0.30s]
+[0m00:15:09.703605 [debug] [Thread-1 (]: SQL status: OK in 0.108 seconds
+[0m00:15:09.706574 [debug] [Thread-2 (]: On test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f: Close
+[0m00:15:09.711976 [info ] [Thread-2 (]: 6 of 9 PASS source_unique_raw_200k_customer_support_tickets_200k_ticket_id ..... [[32mPASS[0m in 0.17s]
+[0m00:15:09.709400 [debug] [Thread-4 (]: Finished running node test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77
+[0m00:15:09.713543 [debug] [Thread-4 (]: Began running node test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b
+[0m00:15:09.711122 [debug] [Thread-1 (]: On test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709: ROLLBACK
+[0m00:15:09.714927 [debug] [Thread-1 (]: Failed to rollback 'test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709'
+[0m00:15:09.712895 [debug] [Thread-2 (]: Finished running node test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f
+[0m00:15:09.714268 [info ] [Thread-4 (]: 9 of 9 START test unique_stg_users_user_id ..................................... [RUN]
+[0m00:15:09.716324 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.customer_support_tickets.not_null_stg_users_user_id.980dfc1b77, now test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b)
+[0m00:15:09.716843 [debug] [Thread-4 (]: Began compiling node test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b
+[0m00:15:09.715483 [debug] [Thread-1 (]: On test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709: Close
+[0m00:15:09.723054 [info ] [Thread-1 (]: 7 of 9 PASS unique_stg_tickets_200k_ticket_id .................................. [[32mPASS[0m in 0.17s]
+[0m00:15:09.724671 [debug] [Thread-1 (]: Finished running node test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709
+[0m00:15:09.724038 [debug] [Thread-4 (]: Writing injected SQL for node "test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b"
+[0m00:15:09.725722 [debug] [Thread-4 (]: Began executing node test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b
+[0m00:15:09.729079 [debug] [Thread-4 (]: Writing runtime sql for node "test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b"
+[0m00:15:09.729932 [debug] [Thread-4 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b"
+[0m00:15:09.730454 [debug] [Thread-4 (]: On test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b: BEGIN
+[0m00:15:09.730925 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m00:15:09.731811 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m00:15:09.732329 [debug] [Thread-4 (]: Using duckdb connection "test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b"
+[0m00:15:09.733834 [debug] [Thread-4 (]: On test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "customer_support_tickets", "target_name": "dev", "node_id": "test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    user_id as unique_field,
+    count(*) as n_records
+
+from "support_200k"."main"."stg_users"
+where user_id is not null
+group by user_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m00:15:09.739274 [debug] [Thread-3 (]: SQL status: OK in 0.078 seconds
+[0m00:15:09.742519 [debug] [Thread-3 (]: On test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4: ROLLBACK
+[0m00:15:09.745589 [debug] [Thread-3 (]: Failed to rollback 'test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4'
+[0m00:15:09.746099 [debug] [Thread-3 (]: On test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4: Close
+[0m00:15:09.746799 [info ] [Thread-3 (]: 8 of 9 PASS unique_stg_tickets_ticket_id ....................................... [[32mPASS[0m in 0.14s]
+[0m00:15:09.752480 [debug] [Thread-3 (]: Finished running node test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4
+[0m00:15:09.923003 [debug] [Thread-4 (]: SQL status: OK in 0.189 seconds
+[0m00:15:09.924696 [debug] [Thread-4 (]: On test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b: ROLLBACK
+[0m00:15:09.925224 [debug] [Thread-4 (]: Failed to rollback 'test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b'
+[0m00:15:09.925570 [debug] [Thread-4 (]: On test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b: Close
+[0m00:15:09.926163 [info ] [Thread-4 (]: 9 of 9 PASS unique_stg_users_user_id ........................................... [[32mPASS[0m in 0.21s]
+[0m00:15:09.926944 [debug] [Thread-4 (]: Finished running node test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b
+[0m00:15:09.928668 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:09.928955 [debug] [MainThread]: On master: BEGIN
+[0m00:15:09.929312 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:15:09.929912 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m00:15:09.930239 [debug] [MainThread]: On master: COMMIT
+[0m00:15:09.930517 [debug] [MainThread]: Using duckdb connection "master"
+[0m00:15:09.930785 [debug] [MainThread]: On master: COMMIT
+[0m00:15:09.931251 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m00:15:09.931542 [debug] [MainThread]: On master: Close
+[0m00:15:09.931893 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:15:09.932231 [debug] [MainThread]: Connection 'test.customer_support_tickets.source_unique_raw_200k_customer_support_tickets_200k_ticket_id.2cd387342f' was properly closed.
+[0m00:15:09.932535 [debug] [MainThread]: Connection 'test.customer_support_tickets.unique_stg_tickets_ticket_id.8a1a5dfba4' was properly closed.
+[0m00:15:09.932791 [debug] [MainThread]: Connection 'test.customer_support_tickets.unique_stg_tickets_200k_ticket_id.2440017709' was properly closed.
+[0m00:15:09.933086 [debug] [MainThread]: Connection 'test.customer_support_tickets.unique_stg_users_user_id.c2ff477e6b' was properly closed.
+[0m00:15:09.933435 [info ] [MainThread]: 
+[0m00:15:09.933840 [info ] [MainThread]: Finished running 9 data tests in 0 hours 0 minutes and 0.80 seconds (0.80s).
+[0m00:15:09.936891 [debug] [MainThread]: Command end result
+[0m00:15:09.983556 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/capstone_support/target/manifest.json
+[0m00:15:09.985532 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/capstone_support/target/semantic_manifest.json
+[0m00:15:09.992632 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/capstone_support/target/run_results.json
+[0m00:15:09.992926 [info ] [MainThread]: 
+[0m00:15:09.993408 [info ] [MainThread]: [33mCompleted with 1 warning:[0m
+[0m00:15:09.993959 [info ] [MainThread]: 
+[0m00:15:09.994637 [warn ] [MainThread]: [33mWarning in test accepted_values_stg_tickets_200k_priority__low__medium__high__critical (models/staging/schema.yml)[0m
+[0m00:15:09.995219 [warn ] [MainThread]: Got 4 results, configured to warn if != 0
+[0m00:15:09.995678 [info ] [MainThread]: 
+[0m00:15:09.996309 [info ] [MainThread]:   compiled code at target/compiled/customer_support_tickets/models/staging/schema.yml/accepted_values_stg_tickets_20_91594134944faa956f06a83a4ff3028a.sql
+[0m00:15:09.996757 [info ] [MainThread]: 
+[0m00:15:09.997293 [info ] [MainThread]: Done. PASS=8 WARN=1 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+[0m00:15:09.998449 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 2.061393, "process_in_blocks": "93520", "process_kernel_time": 0.590207, "process_mem_max_rss": "263056", "process_out_blocks": "3608", "process_user_time": 3.229664}
+[0m00:15:09.998953 [debug] [MainThread]: Command `dbt test` succeeded at 00:15:09.998822 after 2.06 seconds
+[0m00:15:09.999457 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a48154210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a48154090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x741a4c9f11d0>]}
+[0m00:15:09.999866 [debug] [MainThread]: Flushing usage events
+[0m00:15:10.148579 [debug] [MainThread]: An error was encountered while trying to flush usage events
