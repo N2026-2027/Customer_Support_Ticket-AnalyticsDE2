@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 # =============================================================================
 # scripts/spark_batch_process.py
-#
-# Escribe a DOS bases DuckDB separadas:
-#   support_200k.duckdb     ← dataset 200k (snake_case, 30 cols)
-#   support_original.duckdb ← dataset original (Title Case, 17 cols)
-#
-# Y a PostgreSQL (capa operativa, una tabla por dataset).
 # =============================================================================
 import os
 import sys
@@ -26,7 +20,6 @@ DATA_DIR        = os.environ.get('DATA_DIR',
 DUCKDB_DIR      = os.environ.get('DUCKDB_DIR',
     '/workspaces/Customer_Support_Ticket-AnalyticsDE2/duckdb')
 
-# Una base por dataset
 DUCKDB_200K     = f"{DUCKDB_DIR}/support_200k.duckdb"
 DUCKDB_ORIGINAL = f"{DUCKDB_DIR}/support_original.duckdb"
 
@@ -60,7 +53,6 @@ def write_postgres(df, table: str):
         .mode("overwrite").save()
 
 def write_duckdb(df, duckdb_path: str, table: str):
-    """Escribe al schema 'main' de la base DuckDB indicada."""
     db_name = os.path.basename(duckdb_path)
     print(f"  🦆 → DuckDB ({db_name}): main.{table}")
     df.write.format("jdbc") \
@@ -78,10 +70,10 @@ print(f"{'='*60}")
 
 if not os.path.exists(CSV_200K):
     print(f"❌ No encontrado: {CSV_200K}")
-    print("   Ejecutá primero: python3 scripts/download_dataset.py")
     sys.exit(1)
 
-df_200k = spark.read.csv(CSV_200K, header=True, inferSchema=True)
+# ARREGLO: Agregadas opciones multiLine y escape para evitar desorden de columnas
+df_200k = spark.read.csv(CSV_200K, header=True, inferSchema=True, multiLine=True, escape='"')
 print(f"   ✅ {df_200k.count():,} filas | {len(df_200k.columns)} columnas")
 
 df_200k_clean = df_200k \
@@ -104,7 +96,8 @@ if os.path.exists(CSV_ORIG):
     print(f"   destino DuckDB: support_original.duckdb")
     print(f"{'='*60}")
 
-    df_orig = spark.read.csv(CSV_ORIG, header=True, inferSchema=True)
+    # ARREGLO: Agregadas opciones multiLine y escape para evitar desorden de columnas
+    df_orig = spark.read.csv(CSV_ORIG, header=True, inferSchema=True, multiLine=True, escape='"')
     print(f"   ✅ {df_orig.count():,} filas | {len(df_orig.columns)} columnas")
 
     df_orig_clean = df_orig \
